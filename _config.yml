@@ -23,13 +23,13 @@ email: Oussama.mahieddine@outlook.com
 description: Oussama Mahieddine is a 2d/3d artist.
 baseurl: "/SamaMah" # the subpath of your site, e.g. /blog
 url: "https://SamaMah.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
 
 # Build settings
-theme: minima
+permalink: pretty
+
 plugins:
   - jekyll-feed
+  #- jekyll-autoprefixer
 sass:
   sass_dir: _sass
   style: compressed
