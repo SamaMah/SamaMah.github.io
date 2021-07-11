@@ -1,7 +1,8 @@
 <!-- Navigation -->
 <nav class="nav-wrap">
-  <a href="{{ site.baseurl }}/" class="nav-logo"></a>
-  <ul class="navigation">
+  <a href="{{ site.baseurl }}/" class="nav-logo">
+  </a>
+  <ul class="navigation {% if page.url == '/' %}nav-dark{% endif %}">
     <li><a href="{{ site.baseurl }}/">Home</a></li>
     <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
     <li><a href="{{ site.baseurl }}/about">About Me</a></li>
