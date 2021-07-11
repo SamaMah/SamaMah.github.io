@@ -1,6 +1,12 @@
-nav.nav-wrap
+/* HEADER/NAVIGATION */
+nav.nav-container
+  // prevent scrollbar appearing on top
+  overflow: hidden
+  background-color: #CDD5D1
+  // nav bar is fixed on top
+  position: fixed
+  width: 100%
   transition: all 0.3s ease-in
-  position: absolute
   top: 0
   left: 0
   right: 0
@@ -11,7 +17,8 @@ nav.nav-wrap
   padding: 0 20px
 @media screen and (max-width: 600px)
   padding: 35px 20px
-//website logo
+
+/* WEBSITE LOGO */
 a.nav-logo
   display: inline-block
   height: 50px
@@ -21,6 +28,8 @@ a.nav-logo
     size: cover
     position: center center
     repeat: no-repeat
+
+/* NAVIGATION LIST */
 ul.navigation
   display: flex
   flex-direction: row
