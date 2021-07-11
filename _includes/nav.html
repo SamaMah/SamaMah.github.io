@@ -1,5 +1,6 @@
-<!-- Navigation -->
+<!-- Header -->>
 <div class="nav-container">
+  <!-- Navigation -->
   <nav class="nav-bar">
     <a href="{{ site.baseurl }}/" class="nav-logo">
     </a>
@@ -8,5 +9,42 @@
       <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
       <li><a href="{{ site.baseurl }}/about">About Me</a></li>
     </ul>
+    <!-- Button toggle mobile navigation -->
+    <div class="nav-icon-open-wrapper {% if page.url == '/' %}nav-dark{% endif %}">
+      <svg viewBox="0 0 18 15" width="18px" height="15px">
+        <path fill="#currentcolor" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+        <path fill="#currentcolor" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+        <path fill="#currentcolor" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+      </svg>
+    </div>
   </nav>
 </div>
+<!-- Overlay  --->
+<div class="nav-toggle-body-overlay"></div>
+<!-- Mobile navigation  --->
+<div class="toggled-nav-wrapper">
+  <div class="nav-icon-close-wrapper">
+    <svg viewBox="0 0 386.667 386.667" width="512" height="512" >
+      <path fill="#currentcolor" d="m386.667 45.564-45.564-45.564-147.77 147.769-147.769-147.769-45.564 45.564 147.769 147.769-147.769 147.77 45.564 45.564 147.769-147.769 147.769 147.769 45.564-45.564-147.768-147.77z"/>
+    </svg>
+  </div>
+<!-- Mobile links -->
+<div class="internal-nav-links-wrapper">
+  <a href="{{ site.baseurl }}/" class="internal-link-wrapper"></a>
+  <div class="link-titles-wrapper">
+    <h5>Home</h5>
+    <div class="internal-link-icon internal-link-icon-home"></div>
+  </div>
+  <a href="{{ site.baseurl }}/projects" class="internal-link-wrapper"></a>
+  <div class="link-titles-wrapper">
+    <h5>Work</h5>
+    <div class="internal-link-icon internal-link-icon-projects"></div>
+  </div>
+  <a href="{{ site.baseurl }}/about" class="internal-link-wrapper"></a>
+  <div class="link-titles-wrapper">
+    <h5>About</h5>
+    <div class="internal-link-icon internal-link-icon-about"></div>
+  </div>
+</div>
+</div>
+<!-- End Navigation -->

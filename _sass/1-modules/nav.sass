@@ -1,6 +1,7 @@
 /* HEADER CONTAINER */
 .nav-container
   // nav bar is fixed on top
+  z-index: 100
   position: fixed
   width: 100%
   top: 0
@@ -53,3 +54,64 @@ ul.navigation.nav-dark
       color: $primary
     a:hover
       color: darken($white, 25%)
+/* Toggled Nav */
+.nav-icon-open-wrapper, .nav-icon-close-wrapper
+  position: relative
+  height: 50px
+  width: 50px
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  overflow: visible
+  svg
+    width: 24px
+    height: auto
+    fill: $primary
+.nav-icon-close-wrapper
+  svg
+    fill: $primary
+.toggled-nav-wrapper
+  transition: all 0.2s ease-in-out
+  display: flex
+  z-index: 1001
+  align-items: flex-end
+  flex-direction: column
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  width: 300px
+  height: 100%
+  padding: 0px 20px 35px 0px
+  background: #F41563
+  transform: translateX(300px)
+.internal-nav-links-wrapper
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  text-align: right
+  margin-top: 10px
+  margin-right: 10px
+  height: 100px
+  a.internal-link-wrapper
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    align-items: center
+.nav-toggle-body-overlay
+  display: block
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0,0,0,0.6)
+  z-index: 1000
+  opacity: 0
+  transform: translateX(100%)
+@media screen and(min-width: 600px)
+  .nav-icon-open-wrapper, .nav-icon-close-wrapper, .toggled-nav-wrapper, .nav-toggle-body-overlay
+    display: none
