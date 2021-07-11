@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "all_styles.css",
+	"file": "master.css",
 	"sources": [
-		"all_styles.sass",
+		"master.sass",
 		"_sass/styles.sass",
 		"_sass/0-base/0-base_dir.sass",
 		"_sass/1-modules/1-modules_dir.sass",
@@ -18,5 +18,5 @@
 		".HeaderTest {\n  width: 500px;\n  height: 500px;\n  background: pink; }\n"
 	],
 	"names": [],
-	"mappings": "AKAA,AAAA,WAAW,CAAC,EACV,KAAK,EAAE,KAAK,EACZ,MAAM,EAAE,KAAK,EACb,UAAU,EAAE,IAAI,GAAG"
+	"mappings": "AKAA,AAAA,WAAW,AAAC,CACV,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,KAAK,CACb,UAAU,CAAE,IAAI,CAAG"
 }

@@ -20,9 +20,9 @@
 
 title: Oussama Mahieddine
 email: Oussama.mahieddine@outlook.com
-description:  line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+description: Oussama Mahieddine is a 2d/3d artist.
 baseurl: "/SamaMah" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://SamaMah.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
@@ -32,7 +32,8 @@ plugins:
   - jekyll-feed
 sass:
   sass_dir: _sass
-  
+  style: compressed
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
