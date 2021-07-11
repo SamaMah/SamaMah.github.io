@@ -24,8 +24,13 @@ description: Oussama Mahieddine is a 2d/3d artist.
 baseurl: "/SamaMah" # the subpath of your site, e.g. /blog
 url: "https://SamaMah.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
+#socials
+instagram_path: https://www.instagram.com/samam4
+artstation_path: https://www.artstation.com/sama
+
 # Build settings
 permalink: pretty
+markdown: kramdown
 
 plugins:
   - jekyll-feed
