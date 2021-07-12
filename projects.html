@@ -1,5 +1,16 @@
 ---
-layout: portfolio
+layout: projects
 permalink: /projects/
 ---
 <p>Hello, does this work??</p>
+
+<div class="portfolio">
+  {% assign items = site.portfolio | sort: 'order' %}
+  {% for item in items %}
+  	{% unless item.hide %}
+	  <a href="{{ item.url }}" style="background-image: url(assets/portfolio-thumbnails/{{ item.thumbnail-hover }})">
+	    <img src="assets/portfolio-thumbnails/{{ item.thumbnail }}">
+	  </a>
+    {% endunless %}
+  {% endfor %}
+</div>
