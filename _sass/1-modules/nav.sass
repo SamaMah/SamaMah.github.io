@@ -31,8 +31,6 @@ nav.nav-bar
 ul.nav-links
   z-index: 1002
   display: flex
-  transition: all 0.3s ease
-  //margin-right: 200px
   li
     list-style: none
     padding-right: 45px
@@ -84,7 +82,6 @@ ul.nav-links
   a.nav-logo
     position: absolute
   ul.nav-links
-    opacity: 0
     position: fixed
     top: 0
     right: 0
@@ -98,7 +95,6 @@ ul.nav-links
       padding-right: 0px
       padding-top: 9vh
     transform: translateX(100%)
-    transition: all 0.3s ease
   .nav-icon-open-wrapper
     display: block
     position: absolute
@@ -114,9 +110,10 @@ ul.nav-links
       left: 0
       right: 0
     .nav-body-overlay
-      transition: opacity 0.2s ease-in-out, transform 0s
       opacity: 1
+      transition: opacity 0.2s ease-in-out, transform 0s
       transform: translateX(0)
     ul.nav-links
       opacity: 1
+      transition: all 0.3s ease
       transform: translateX(0)
