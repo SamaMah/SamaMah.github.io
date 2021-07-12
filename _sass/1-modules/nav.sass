@@ -1,105 +1,64 @@
-/* HEADER CONTAINER */
-.nav-container
-  // nav bar is fixed on top
-  z-index: 100
-  position: fixed
-  width: 100%
-  top: 0
-  // prevent scrollbar appearing on top
-  overflow: hidden
-  background-color: #CDD5D1
-/* NAVIGATION BAR */
-nav.nav-bar
-  position: relative
-  transition: all 0.3s ease-in
-  max-width: 1000px
+// Removing basic elements
+*
+  margin: 0px
+  padding-left: 0px
+  box-sizing: border-box
+  //transition: none
+.nav-header
   display: flex
-  justify-content: space-between
-  margin: auto
-  padding: 0 20px
-@media screen and (max-width: 600px)
-  padding: 35px 20px
+  align-items: center
+  justify-content: space-around
+  overflow: hidden
+  background-color: #999
+  min-height: 8vh
+
 /* WEBSITE LOGO */
 a.nav-logo
-  display: inline-block
+  display: block
+  z-index: 100
   height: 50px
   width: 50px
   background:
     image: url('../img/logostandin.png')
-    size: cover
-    position: center center
     repeat: no-repeat
-/* NAVIGATION LIST */
-ul.navigation
+/* NAVIGATION BAR */
+nav.nav-bar
   display: flex
-  flex-direction: row
-  justify-content: center
   align-items: center
-  @media screen and (max-width: 600px)
-    display: none
+  z-index: 100
+
+/* NAVIGATION LIST */
+ul.nav-links
+  transition: none
+  z-index: 1002
+  display: flex
+  //margin-right: 200px
   li
-    display: block
-    padding-right: 30px
-    a
-      color: $white
-      transition: all 0.15s ease-in
-    a:hover
-      color: darken($white, 25%)
-  li:last-of-type
-    //Removes padding on last nav link
-    padding-right: 0
-ul.navigation.nav-dark
-  li
+    transition: none
+    list-style: none
+    padding-right: 45px
     a
       color: $primary
+      letter-spacing: 3px
     a:hover
-      color: darken($white, 25%)
-/* Toggled Nav */
-.nav-icon-open-wrapper, .nav-icon-close-wrapper
-  position: relative
-  height: 50px
-  width: 50px
-  display: flex
-  justify-content: center
-  align-items: center
+      color: darken($white, 70%)
+  // Removes padding on last nav link
+  li:last-of-type
+    padding-right: 0
+
+// Mobile nav icon
+.nav-icon-open-wrapper
+  z-index: 1005
+  display: none
   cursor: pointer
-  overflow: visible
-  svg
-    width: 24px
-    height: auto
-    fill: $primary
-.nav-icon-close-wrapper
-  svg
-    fill: $primary
-.toggled-nav-wrapper
-  transition: all 0.2s ease-in-out
-  display: flex
-  z-index: 1001
-  align-items: flex-end
-  flex-direction: column
-  position: fixed
-  top: 0
-  right: 0
-  bottom: 0
-  width: 300px
-  height: 100%
-  padding: 0px 20px 35px 0px
-  background: #F41563
-  transform: translateX(300px)
-.internal-nav-links-wrapper
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  text-align: right
-  margin-top: 10px
-  margin-right: 10px
-  height: 100px
-  a.internal-link-wrapper
-    display: flex
-    flex-direction: row
-    justify-content: flex-end
-    align-items: center
-.nav-toggle-body-overlay
+.nav-icon-open-wrapper
+  div
+    height: 4px
+    margin: 5px
+    width: 27px
+    background-color: $primary
+
+.nav-body-overlay
   transition: opacity 0.2s ease-in-out, transform 0s ease-in-out 0.2s
   display: block
   position: fixed
@@ -113,20 +72,53 @@ ul.navigation.nav-dark
   z-index: 1000
   opacity: 0
   transform: translateX(100%)
-html.nav-open
-  body
-    overflow: hidden
+
+// Switch to mobile navigation
+@media screen and (max-width: 600px)
+  a.nav-logo
+    position: absolute
+  ul.nav-links
     position: fixed
     top: 0
-    bottom: 0
-    left: 0
     right: 0
-  .nav-toggle-body-overlay
-    transition: opacity 0.2s ease-in-out, transform 0s
-    opacity: 1
-    transform: translateX(0)
-  .toggled-nav-wrapper
-    transform: translateX(0)
-@media screen and(min-width: 600px)
-  .nav-icon-open-wrapper, .nav-icon-close-wrapper, .toggled-nav-wrapper, .nav-toggle-body-overlay
+    height: 100vh
+    background: #FFD564
+    width: 35%
+    display: flex
+    flex-direction: column
+    align-items: center
+    li
+      padding-right: 0px
+      padding-top: 9vh
+      //opacity: 0
+    transform: translateX(100%)
+    transition: transform 0.5s ease-in
+  .nav-icon-open-wrapper
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    margin: 10px 40px 0 0
+  //.nav-body-overlay
     display: none
+
+html.nav-active
+  ul.nav-links
+    transform: translateX(0)
+
+
+// html.nav-open
+//   body
+//     overflow: hidden
+//     position: fixed
+//     top: 0
+//     bottom: 0
+//     left: 0
+//     right: 0
+//   .nav-body-overlay
+//     transition: opacity 0.2s ease-in-out, transform 0s
+//     opacity: 1
+//     transform: translateX(0)
+//   ul.nav-links
+//     transition: transform 0.5s ease-in-out
+//     transform: translateX(0)
