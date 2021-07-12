@@ -112,6 +112,20 @@ ul.navigation.nav-dark
   z-index: 1000
   opacity: 0
   transform: translateX(100%)
+html.nav-open
+  body
+    overflow: hidden
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+  .nav-toggle-body-overlay
+    transition: opacity 0.2s ease-in-out, transform 0s
+    opacity: 1
+    transform: translateX(0)
+  .toggled-nav-wrapper
+    transform: translateX(0)
 @media screen and(min-width: 600px)
   .nav-icon-open-wrapper, .nav-icon-close-wrapper, .toggled-nav-wrapper, .nav-toggle-body-overlay
     display: none
