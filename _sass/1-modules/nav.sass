@@ -9,7 +9,7 @@
   align-items: center
   justify-content: space-around
   overflow: hidden
-  background-color: #999
+  background-color: $nav-color
   min-height: 8vh
 
 /* WEBSITE LOGO */
@@ -22,6 +22,7 @@ a.nav-logo
     image: url('../img/logostandin.png')
     size: contain
     repeat: no-repeat
+
 /* NAVIGATION BAR */
 nav.nav-bar
   display: flex
@@ -36,7 +37,7 @@ ul.nav-links
     list-style: none
     padding-right: 45px
     a
-      color: $primary
+      color: $white
       letter-spacing: 3px
     a:hover
       color: darken($white, 70%)
@@ -54,7 +55,7 @@ ul.nav-links
     height: 4px
     margin: 5px
     width: 27px
-    background-color: $primary
+    background-color: $bg-color
     transition: all 0.3s ease
 .toggle .line1
   transform: translate(0px, 9px) rotate(45deg)
@@ -87,7 +88,7 @@ ul.nav-links
     top: 0
     right: 0
     height: 100vh
-    background: #FFD564
+    background: $nav-color
     width: 35%
     display: flex
     flex-direction: column
