@@ -4,6 +4,7 @@
   padding-left: 0px
   box-sizing: border-box
   transition: none
+
 .nav-header
   display: flex
   align-items: center
@@ -18,16 +19,16 @@ a.nav-logo
   z-index: 1200
   width: 70px
   height: 70px
+  margin: 0.5rem
   background:
     image: url('../img/logostandin.png')
-    size: contain
+    size: auto 100%
     repeat: no-repeat
-
 /* NAVIGATION BAR */
 nav.nav-bar
   display: flex
   align-items: center
-  z-index: 100
+  z-index: 1000
 
 /* NAVIGATION LIST */
 ul.nav-links
@@ -82,6 +83,7 @@ ul.nav-links
 // Switch to mobile navigation
 @media screen and (max-width: 600px)
   a.nav-logo
+    display: inline-block
     position: absolute
   ul.nav-links
     position: fixed
