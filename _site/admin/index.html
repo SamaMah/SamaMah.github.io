@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 
-<html lang="">
+<html lang="en-ca">
   <head>
-    {% include head.html %}
+    <meta charset="UTF-8">
+    <title>Content Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    {% include nav.html %}
-
-    {{ content }}
-
-    {% include footer.html %}
-
-    {% include js-link.html %}
+    <!-- Include the script that builds the page and powers Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   </body>
 </html>
