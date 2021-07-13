@@ -1,0 +1,40 @@
+
+.profile-title
+  position: relative
+  margin-top: 100px
+  z-index: 3
+  text-align: center
+  h1
+    font-size: 3.125em
+    font-weight: 500
+    line-height: 1.2em
+    padding: 0 20px 5px 20px
+  h3
+    font-size: 1.25em
+
+a.profile-avatar
+  display: block
+  z-index: 3
+  margin-left: auto
+  margin-right: auto
+  height: 100px
+  width: 100px
+  border-radius: 100%
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, .5)
+  background:
+    image: url('../img/profilepic.png')
+    size: cover
+    position: center center
+    repeat: no-repeat
+  @media screen and(max-width: 355px)
+    height: 75px
+    width: 75px
+    margin-bottom: -43px
+p.test
+  margin-left: auto
+  margin-right: auto
+  margin-top: 30px
+  max-width: 600px
+  z-index: 3
+  text-align: center
+  background-color: $primary
