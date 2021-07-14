@@ -23,7 +23,6 @@ url: "https://samamah.github.io" # the base hostname & protocol for your site, e
 
 # Build settings
 permalink: pretty
-markdown: kramdown
 
 plugins:
   - jekyll-feed
@@ -31,6 +30,14 @@ plugins:
 sass:
   sass_dir: _sass
   style: compressed
+
+include:
+  - _pages
+  # - _portfolio
+
+collections:
+  portfolio:
+    output: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -42,7 +49,7 @@ sass:
 #
 # exclude:
 #   - .sass-cache/
-# - .jekyll-cache/
+#   - .jekyll-cache/
 #   - gemfiles/
 #   - Gemfile
 #   - Gemfile.lock

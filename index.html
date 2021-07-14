@@ -5,15 +5,13 @@ layout: default
 <!-- Portfolio list -->
 <h2>Portfolio</h2>
 <ul>
-  {% for item in site.pages %}
-  {% if item.type == 'project' %}
-    <li>
-      {{ item.title }}
-      <a href=""></a>
-    </li>
-    {% endif %}
+  {% for piece in site.portfolio %}
+    <a href="{{ piece.url }}">
+        <h5>{{ piece.title }}</h5>
+    </a>
   {% endfor %}
 </ul>
+
 <!-- Recent Projects -->
 <main>
   <!-- Title -->
