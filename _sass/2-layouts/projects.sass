@@ -1,0 +1,15 @@
+h2
+  text-align: center
+  margin-top: 10px
+.portfolio-cointainer
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  margin: 20px
+.portfolio-thumbnail
+  a
+    img
+      width: 100%
+      height: auto
+@media screen and (max-width: 500px)
+  .portfolio-cointainer
+    grid-template-columns: repeat(2, 1fr)

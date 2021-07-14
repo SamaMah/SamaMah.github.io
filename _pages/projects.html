@@ -2,14 +2,17 @@
 layout: default
 permalink: /projects/
 ---
-
 <!-- Portfolio list -->
-<h2>Portfolio</h2>
-<ul>
-  {% assign portfolio = site.portfolio | sort: 'order' %}
-  {% for piece in portfolio %}
-    <a href="{{ piece.url }}">
-        <h5>{{ piece.title }}</h5>
-    </a>
-  {% endfor %}
-</ul>
+<main>
+  <h2>Portfolio</h2>
+  <div class="portfolio-cointainer">
+    {% assign portfolio = site.portfolio | sort: 'order' %}
+    {% for piece in portfolio %}
+      <div class="portfolio-thumbnail">
+        <a href="{{ piece.url }}">
+          <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</main>
