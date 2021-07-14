@@ -2,16 +2,22 @@
 layout: default
 ---
 
-<!-- <div class="image-test">
-  <img src="https://cdnb.artstation.com/p/assets/images/images/021/536/405/large/oussama-m-final-version001.jpg?1572048618" alt="Final Image">
-</div> -->
-
+<!-- Portfolio list -->
+<h2>Portfolio</h2>
+<ul>
+  {% for item in site.pages %}
+  {% if item.type == 'project' %}
+    <li>
+      {{ item.title }}
+      <a href=""></a>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
 <!-- Recent Projects -->
 <main>
   <!-- Title -->
   <h2 class="recent-projects">Recent Projects</h2>
-
-
   <!-- Project container -->
   <div class="recent-projects-container">
     <div class="project-wrap">

@@ -27,7 +27,7 @@ markdown: kramdown
 
 plugins:
   - jekyll-feed
-  #- jekyll-autoprefixer
+  # - jekyll-autoprefixer
 sass:
   sass_dir: _sass
   style: compressed
@@ -42,7 +42,7 @@ sass:
 #
 # exclude:
 #   - .sass-cache/
-#   - .jekyll-cache/
+# - .jekyll-cache/
 #   - gemfiles/
 #   - Gemfile
 #   - Gemfile.lock
