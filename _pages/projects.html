@@ -3,16 +3,27 @@ layout: default
 permalink: /projects/
 ---
 <!-- Portfolio list -->
-<main>
-  <h2>Portfolio</h2>
+<div class="portfolio">
   <div class="portfolio-cointainer">
-    {% assign portfolio = site.portfolio | sort: 'order' %}
-    {% for piece in portfolio %}
-      <div class="portfolio-thumbnail">
-        <a href="{{ piece.url }}">
-          <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
-        </a>
-      </div>
-    {% endfor %}
+    <h2>Portfolio</h2>
+    <div class="project-wrap">
+      {% assign portfolio = site.portfolio | sort: 'order' %}
+      {% for piece in portfolio %}
+        <!-- Project thumbnails -->
+        <div class="portfolio-thumbnail">
+          <a href="#" class="btn-project-open">
+            <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
+          </a>
+        </div>
+        <!-- Modal containers -->
+        <div class="project-modal-container">
+          <div class="project-modal">
+            <h1>{{ piece.title }}</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="btn-project-close">&times</button>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
-</main>
+</div>
