@@ -12,14 +12,28 @@ const navSlide = function(){
 }
 navSlide();
 
-$(document).ready(function(){
+// Projects, modal pop-up
+const openModalThumbnails = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-modal-close]')
 
-  $(".btn-project-open").on('click', function(){
-    $(".project-modal-container").addClass("active")
-  });
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+}
+openModalThumbnails.forEach(icon => {
+    icon.addEventListener('click', () => {
+        const modal = document.querySelector(icon.dataset.modalTarget)
+        openModal(modal)
+    })
+})
 
-  $(".btn-project-close").on('click', function(){
-    $(".project-modal-container").removeClass("active")
-  });
-
-});
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+}
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.project-modal-container')
+        closeModal(modal)
+    })
+})
