@@ -8,6 +8,14 @@ artstation_path: https://www.artstation.com/sama
 
 # Portfolio
 artstation_img_dir: https://cdnb.artstation.com/p/assets/images/images
-countess_off_robotville:
-hellboy_good_samaritan:
-patty_wagen:
+
+portfolio:
+  countess_off_robotville:
+    order: 1
+    title: Countess of Robotville
+    thumbnail_url: https://cdnb.artstation.com/p/assets/images/images/021/536/405/20191025191018/smaller_square/oussama-m-final-version001.jpg?1572048618
+  hellboys_good_samaritan:
+    order: 2
+    title: Hellboy's Good Samaritan
+    thumbnail_url: https://cdna.artstation.com/p/assets/images/images/013/240/626/20181004174216/smaller_square/oussama-mahieddine-good-samaritan-final02.jpg?1538692936
+  patty_wagen:
