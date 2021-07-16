@@ -16,15 +16,17 @@
   //
   background-color: $nav-color
   overflow: hidden
+  // transitions
+  transition: width 0.1s
   /* WEBSITE LOGO */
   .nav-logo
     display: flex
     justify-content: center
-    width: 100%
+    padding-top: 50px
+    margin: 10px
     img
       width: 70px
       height: auto
-      margin: 10px
 /* NAVIGATION BAR */
 .nav-bar
   display: flex
@@ -33,11 +35,19 @@
   /* NAVIGATION LIST */
   .nav-links
     li
+      padding-top: 10px
       a
+        line-height: 30px
         color: $white
         letter-spacing: 3px
       a:hover
         color: darken($white, 70%)
+    li.sub-text
+      padding-top: 0
+      a
+        padding-left: 1em
+        color: #FFF876
+        font-size: 80%
     // Removes padding on last nav link
     li:last-of-type
       padding-right: 0
@@ -77,36 +87,34 @@
   margin-left: $nav-width
 
 // Switch to mobile navigation
+@media screen and (max-width: 850px)
+  .nav-header
+    width: 200px
+  .default_main
+    margin-left: 200px
 @media screen and (max-width: $switch-to-mobile)
   .nav-header
+    transition: none
     // Top header
     width: 100%
     height: auto
     justify-content: center
-  a.nav-logo
-    display: inline-block
+    .nav-logo
+      padding-top: 0
   .nav-bar
     margin: auto
     .nav-links
       z-index: 3
       position: fixed
-      top: 0
-      right: 0
       height: 100vh
       background: $nav-color
       width: 35%
-      display: flex
-      flex-direction: column
-      align-items: center
-      li
-        padding-right: 0px
-        padding-top: 9vh
-      transform: translateX(100%)
+      transform: translateX(-100%)
   .nav-icon-open-wrapper
     display: block
     position: fixed
-    top: 2em
-    left: 1em
+    top: 1.5em
+    left: 1.5em
   html.nav-active
     body
       overflow: hidden
@@ -119,7 +127,7 @@
       opacity: 1
       transition: opacity 0.2s ease-in-out, transform 0s
       transform: translateX(0)
-    ul.nav-links
+    .nav-links
       opacity: 1
       transition: all 0.3s ease
       transform: translateX(0)
