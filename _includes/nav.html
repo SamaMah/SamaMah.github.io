@@ -10,11 +10,15 @@
   <nav class="nav-bar">
     <ul class="nav-links">
       <li><a href="{{ site.baseurl }}/">Home</a></li>
-      <li><a href="{{ site.baseurl }}/portfolio">Portfolio</a></li>
-      <!-- Sub-text -->
-      <li class="sub-text"><a href="{{ site.baseurl }}/portfolio"> - Projects</a></li>
-      <li class="sub-text"><a href="{{ site.baseurl }}/portfolio"> - Personal work</a></li>
-      <li class="sub-text"><a href="{{ site.baseurl }}/portfolio"> - Sketchbook</a></li>
+      <!-- Open dropdow sub-text -->
+      <li><a class="portfolio-dropdown">Portfolio</a>
+        <!-- Sub-text -->
+        <ul class="dropdown-menu menu-1">
+          <li><a href="{{ site.baseurl }}/portfolio"> - Projects</a></li>
+          <li><a href="{{ site.baseurl }}/portfolio"> - Personal work</a></li>
+          <li><a href="{{ site.baseurl }}/portfolio"> - Sketchbook</a></li>
+        </ul>
+      </li>
       <!--  -->
       <li><a href="{{ site.baseurl }}/about">About</a></li>
     </ul>

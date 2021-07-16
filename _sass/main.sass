@@ -1,3 +1,13 @@
 @import "0-base/0-base_dir"
 @import "1-modules/1-modules_dir"
 @import "2-layouts/2-layouts_dir"
+
+//Page animation
+.default_main
+  animation: transitionIn 0.75s
+
+@keyframes transitionIn
+  from
+    opacity: 0
+  to
+    opacity: 1
