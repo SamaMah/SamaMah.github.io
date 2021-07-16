@@ -40,3 +40,9 @@ closeModalButtons.forEach(button => {
         closeModal(modal)
     })
 })
+
+//dropdown
+ $('.portfolio-dropdown').on('click', function(){
+   // Toggle dropdown
+   $('html').toggleClass('dropdown-active');
+ });

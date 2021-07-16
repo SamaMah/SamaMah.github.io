@@ -42,18 +42,21 @@
         letter-spacing: 3px
       a:hover
         color: darken($white, 70%)
+//
 ul.dropdown-menu
   li
     padding-left: 1.5em
     font-size: 80%
     //
     display: none
-li:hover > ul.dropdown-menu li
-  display: block
+// hover to show dropdown
+html.dropdown-active
+  ul.dropdown-menu
+    li
+      display: block
 // Portfolio dropdown
-.nav-links
-  .portfolio-dropdown
-    cursor: pointer
+.portfolio-dropdown
+  cursor: pointer
 
 // Mobile nav icon
 .nav-icon-open-wrapper
