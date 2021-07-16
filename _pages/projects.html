@@ -15,12 +15,22 @@ permalink: /projects/
             <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
           </a>
         </div>
-        <!-- Modal containers -->
+        <!-- Overlay  --->
+        <div class="modal-body-overlay" id="modal-body-overlay"></div>
+        <!-- Modal Container -->
         <div class="project-modal-container" id="project-modal_{{ piece.order }}">
-          <div class="project-modal">
+          <!-- HEADER -->
+          <div class="project-modal-header">
             <h1>{{ piece.title }}</h1>
-            {{ piece.content }}
             <button data-modal-close class="btn-project-close">&times</button>
+          </div>
+          <!-- BODY -->
+          <div class="project-modal-content">
+            {{ piece.content }}
+          </div>
+          <!-- FOOTER -->
+          <div class="project-modal-footer">
+            <h5>footer</h5>
           </div>
         </div>
       {% endfor %}

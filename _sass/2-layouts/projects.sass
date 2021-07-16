@@ -1,15 +1,14 @@
-@import "projects_piece.sass"
+@import "project_body.sass"
+
 *
   margin: 0
   padding: 0
   box-sizing: border-box
-  overflow: auto
 h2
   text-align: center
 .portfolio-cointainer
   display: block
   margin: auto
-  max-width: 1000px
   padding-top: 20px
 .project-wrap
   display: flex
@@ -28,24 +27,51 @@ h2
   .portfolio-thumbnail
     max-width: 150px
 
-.project-modal-container
-  z-index: 1100
-  display: flex
-  align-items: center
-  justify-content: center
+// Modal overlay
+.modal-body-overlay
+  transition: opacity 0.2s ease-in-out
+  display: block
   position: fixed
   top: 0
   left: 0
   width: 100vw
   height: 100vh
   background: #00000099
+  z-index: 1000
+  // Hide
   opacity: 0
   pointer-events: none
-  .project-modal
-    max-width: 100%
-    padding: 30px
-    border-radius: 5px
-    background-color: $white
+
+// Modal popup
+.project-modal-container
+  z-index: 1100
+  // center modal
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  // limit height width
+  width: 70vw
+  height: 90vh
+  //
+  background-color: $white
+  //
+  display: grid
+  grid-column: auto
+  // Hide
+  opacity: 0
+  pointer-events: none
+  .project-modal-header, .project-modal-footer
+    background-color: #456
+    height: 50px
+  .project-modal-content
+    overflow-y: auto
+
+// Activated modal
 .project-modal-container.active
   opacity: 1
+  pointer-events: all
+.modal-body-overlay.active
+  opacity: 1
+  transition: opacity 0.2s ease-in-out
   pointer-events: all

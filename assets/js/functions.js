@@ -15,10 +15,12 @@ navSlide();
 // Projects, modal pop-up
 const openModalThumbnails = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-modal-close]')
+const overlay = document.getElementById('modal-body-overlay')
 
 function openModal(modal) {
     if (modal == null) return
     modal.classList.add('active')
+    overlay.classList.add('active')
 }
 openModalThumbnails.forEach(icon => {
     icon.addEventListener('click', () => {
@@ -30,6 +32,7 @@ openModalThumbnails.forEach(icon => {
 function closeModal(modal) {
     if (modal == null) return
     modal.classList.remove('active')
+    overlay.classList.remove('active')
 }
 closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
