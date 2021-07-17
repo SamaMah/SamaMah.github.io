@@ -2,8 +2,19 @@
 @import "1-modules/1-modules_dir"
 @import "2-layouts/2-layouts_dir"
 
+
+
+.page-content
+  margin-left: $nav-width
+@media screen and (max-width: 850px)
+  .page-content
+    margin-left: 200px
+@media screen and (max-width: $switch-to-mobile)
+  .page-content
+    margin-left: 0
+    margin-top: 94px
 //Page animation
-.default_main
+.page-content
   animation: transitionIn 0.75s
 
 @keyframes transitionIn

@@ -88,15 +88,10 @@ html.dropdown-active
   opacity: 0
   transform: translateX(100%)
 
-.default_main
-  margin-left: $nav-width
-
 // Switch to mobile navigation
 @media screen and (max-width: 850px)
   .nav-header
     width: 200px
-  .default_main
-    margin-left: 200px
 @media screen and (max-width: $switch-to-mobile), screen and (max-height: 425px)
   .nav-header
     z-index: 100
@@ -139,6 +134,3 @@ html.dropdown-active
       opacity: 1
       transition: all 0.3s ease
       transform: translateX(0)
-  .default_main
-    margin: auto
-    margin-top: 90px
