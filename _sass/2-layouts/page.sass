@@ -1,14 +1,25 @@
+// General page layout
 .portfolio-page-layout
-  max-width: 90%
+  width: 95%
   margin: 0 auto
 .page-title-container
   display: flex
+//
 .page-content-container
   display: block
+//
 .image-container
   display: flex
-  flex-wrap: row wrap
+  flex-direction: column
   justify-content: center
+  .image-side-by-side
+    display: flex
+    flex-direction: row
   img
     width: 100%
     height: auto
+
+.video-container
+  display: flex
+  justify-content: center
+  iframe.page-video
