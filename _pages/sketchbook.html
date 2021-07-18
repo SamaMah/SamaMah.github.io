@@ -5,3 +5,12 @@ permalink: /sketchbook/
 
 <div class="project-wrap">
 </div>
+
+
+<!-- <ul id="myUl"></ul> -->
+<div class="sketchbook-container">
+  {% assign sketchbook = site.data.sketchbook %}
+  {% for img in sketchbook.img-links %}
+    <img src="{{ img }}" alt="">
+  {% endfor %}
+</div>
