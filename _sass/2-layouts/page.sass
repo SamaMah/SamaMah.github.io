@@ -1,9 +1,13 @@
+
 // General page layout
 .portfolio-page-layout
-  width: 95%
+  width: 85%
   margin: 0 auto
 .page-title-container
   display: flex
+  justify-content: center
+  padding: 10px 0
+  h1
 //
 .page-content-container
   display: block
@@ -18,11 +22,29 @@
   img
     width: 100%
     height: auto
+  p
+   text-align: center
 @media screen and (max-width: 1300px)
   .image-container
     .image-side-by-side
       flex-direction: column
+
 .video-container
-  display: flex
-  justify-content: center
-  iframe.page-video
+  overflow: hidden
+  padding-bottom: 56.25%
+  position: relative
+  height: 0
+  iframe
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    position: absolute
+
+//
+.media-w-text.smaller-size
+  max-width: 600px
+  margin: 0 auto
+.media-w-text.smaller-size-2
+  max-width: 900px
+  margin: 0 auto
