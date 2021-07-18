@@ -9,13 +9,10 @@ artstation_path: https://www.artstation.com/sama
 # Portfolio
 artstation_img_dir: https://cdnb.artstation.com/p/assets/images/images
 
-portfolio:
-  countess_off_robotville:
-    order: 1
-    title: Countess of Robotville
-    thumbnail_url: https://cdnb.artstation.com/p/assets/images/images/021/536/405/20191025191018/smaller_square/oussama-m-final-version001.jpg?1572048618
-  hellboys_good_samaritan:
-    order: 2
-    title: Hellboy's Good Samaritan
-    thumbnail_url: https://cdna.artstation.com/p/assets/images/images/013/240/626/20181004174216/smaller_square/oussama-mahieddine-good-samaritan-final02.jpg?1538692936
-  patty_wagen:
+sketchbook:
+  img: https://cdna.artstation.com/p/assets/images/images/013/345/044/large/oussama-mahieddine-boompjes.jpg?1539177181
+  img: https://cdnb.artstation.com/p/assets/images/images/013/344/871/large/oussama-mahieddine-sadgurl.jpg?1539176646
+  img: https://cdna.artstation.com/p/assets/images/images/013/344/820/large/oussama-mahieddine-artemis01.jpg?1539176465
+  img: https://cdna.artstation.com/p/assets/images/images/013/367/034/large/oussama-mahieddine-boi-sketch.jpg?1539265525
+  img: https://cdnb.artstation.com/p/assets/images/images/013/345/103/large/oussama-mahieddine-demondude.jpg?1539177315
+  img: https://cdnb.artstation.com/p/assets/images/images/013/367/659/large/oussama-mahieddine-demone.jpg?1539267135
