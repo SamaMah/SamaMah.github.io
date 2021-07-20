@@ -2,3 +2,18 @@
 layout: default
 permalink: /projects/
 ---
+
+<!-- Projects list -->
+<div class="project-thumbnail-cointainer">
+  <div class="project-wrap">
+    {% assign projects = site.projects | sort: 'order' %}
+    {% for piece in projects %}
+      <!-- Project thumbnails -->
+      <div class="portfolio-thumbnail">
+        <a href="{{ piece.url }}" class="btn-project-open">
+          <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
