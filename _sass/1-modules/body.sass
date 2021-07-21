@@ -1,0 +1,13 @@
+// Fit page next to nav
+.page-content
+  margin-left: $nav-width
+@media screen and (max-width: 850px)
+  .page-content
+    margin-left: 200px
+@media screen and (max-width: $switch-to-mobile), screen and (max-height: 425px)
+  .page-content
+    margin-left: 0
+    margin-top: 94px
+body
+  background:
+    color: $bg-color

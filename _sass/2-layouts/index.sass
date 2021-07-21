@@ -1,17 +1,18 @@
 .banner-container
   display: flex
-  flex-direction: column
-  justify-content: space-around
+  flex-flow: column
   height: 100vh
-  background: #DD45
-  div
-    height: 100%
-    margin-top: 20px
-    background-color: #FFF000
-  div:last-child
-    margin-bottom: 20px
-
-.banner-container div a
-  display: flex
-  height: 100%
   justify-content: center
+  div
+    min-height: 250px
+    margin-top: 45px
+    background-color: $banner-color
+  div:last-child
+    margin-bottom: 45px
+
+.banner-container div a p
+  display: flex
+  height: 250px
+  justify-content: center
+  align-items: center
+  color: $white
