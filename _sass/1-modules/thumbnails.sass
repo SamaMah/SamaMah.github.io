@@ -17,11 +17,12 @@
       opacity: 0.5
 .projects-thumbnail
   transition: all 0.2s ease-in-out
-  max-width: 500px
   a
     cursor: pointer
     display: flex
     flex-direction: column
+    width: 400px
+    height: 400px
     img
       width: 100%
       height: auto
@@ -29,7 +30,7 @@
       opacity: 0.5
 
 @media screen and (max-width: 500px)
-  .portfolio-thumbnail
+  .portfolio-thumbnail, .projects-thumbnail
     max-width: 160px
 
 //

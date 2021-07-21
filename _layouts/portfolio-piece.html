@@ -14,8 +14,11 @@ layout: default
 <hr>
 <!-- Portfolio piece list -->
 <div class="project-thumbnail-cointainer">
+  <h1>Other projects</h1>
   <div class="project-wrap">
-    {% assign portfolio = site.portfolio | sort: 'order' %}
+    {% assign personal = site.portfolio | sort: 'order' %}
+    {% assign professional = site.projects | sort: 'order' %}
+    {% assign portfolio = professional | concat: personal %}
     {% for piece in portfolio %}
       <!-- Project thumbnails -->
       <div class="portfolio-thumbnail">
