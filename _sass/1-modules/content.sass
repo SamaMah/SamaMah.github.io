@@ -15,7 +15,7 @@ body
     color: $bg-color
 
 // Particles
-.particle-wrapper, .particle-wrapper-front
+.particle-wrapper, .particle-wrapper-front, .particle-wrapper-back
   z-index: -1
   top: 0
   height: 100%
@@ -23,7 +23,7 @@ body
   position: fixed
   display: flex
   justify-content: space-around
-.particle, .particle-front
+.particle, .particle-front, .particle-back
   align-self: flex-end
   width: 1em
   height: 1em
@@ -31,13 +31,12 @@ body
   transform: translateY(100%)
 .particle
   animation: animParticle 10s linear infinite
-.particle-front
+.particle-front, .particle-back
   animation: animParticleCounter 10s linear infinite
 
 @for $i from 1 through 15
   .particle-#{$i}
-    //
-    $rand-depth: random(8) / 10
+    $rand-depth: 0.1 + (random(8) / 10)
     $random-blur: (1 - $rand-depth) * 6
     $rand-time: random(15) + (1 - $rand-depth) * 60
     $rand-height: 1 + (random(3) / 5)
@@ -49,7 +48,6 @@ body
     opacity: #{$rand-depth}
 @for $i from 1 through 4
   .particle-front-#{$i}
-    //
     $rand-time: 8 + random(10)
     $rand-height: 1.5 + (random(3) / 5)
     $rand-width: 1.5 + (random(3) / 5)
@@ -58,6 +56,19 @@ body
     width: #{$rand-width}em
     animation-delay: -#{$random-delay}s
     animation-duration: #{$rand-time}s
+@for $i from 1 through 15
+  .particle-back-#{$i}
+    $rand-depth: random(1) / 15
+    $random-blur: (1 - $rand-depth) * 6
+    $rand-time: random(5) + (1 - $rand-depth) * 120
+    $rand-height: 0.5 + (random(3) / 5)
+    $random-delay: 7 + random(80)
+    width: 0.5em
+    height: #{$rand-height}em
+    animation-delay: -#{$random-delay}s
+    animation-duration: #{$rand-time}s
+    filter: blur(#{$random-blur}px)
+    opacity: #{$rand-depth}
 
 @keyframes animParticle
   from
