@@ -50,7 +50,7 @@ collections:
 #
 exclude:
 #   - .sass-cache/
-   - .jekyll-cache/
+#   - .jekyll-cache/
 #   - gemfiles/
 #   - Gemfile
 #   - Gemfile.lock
