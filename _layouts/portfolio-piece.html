@@ -19,7 +19,7 @@ layout: default
     {% assign personal = site.portfolio | sort: 'order' %}
     {% assign professional = site.projects | sort: 'order' %}
     {% assign portfolio = professional | concat: personal %}
-    {% for piece in portfolio %}
+    {% for piece in personal %}
       <!-- Project thumbnails -->
       <div class="portfolio-thumbnail">
         <a href="{{ piece.url }}" class="btn-project-open" data-modal-target="#project-modal_{{ piece.order }}">

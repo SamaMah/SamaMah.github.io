@@ -64,11 +64,11 @@ body
 
     $random-rad: (-1 + random(2)) * 400
     border-radius: #{$random-rad}px
-@for $i from 1 through 15
+@for $i from 1 through 10
   .particle-back-#{$i}
     $rand-depth: random(1) / 15
-    $random-blur: (1 - $rand-depth) * 8
-    $rand-time: random(5) + (1 - $rand-depth) * 120
+    $random-blur: (1 - $rand-depth) * 5
+    $rand-time: random(5) + (1 - $rand-depth) * 100
     $rand-height: 0.5 + (random(3) / 5)
     $random-delay: 7 + random(80)
     width: 0.5em
