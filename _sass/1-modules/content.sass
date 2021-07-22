@@ -15,7 +15,7 @@ body
     color: $bg-color
 
 // Particles
-.particle-wrapper
+.particle-wrapper, .particle-wrapper-front
   z-index: -1
   top: 0
   height: 100%
@@ -23,32 +23,49 @@ body
   position: fixed
   display: flex
   justify-content: space-around
-.particle
-  animation: animParticle 10s linear infinite
+.particle, .particle-front
   align-self: flex-end
   width: 1em
   height: 1em
+  background-color: $white
   transform: translateY(100%)
-  background: $white
-  border-radius: 2px
-@use sass.math
+.particle
+  animation: animParticle 10s linear infinite
+.particle-front
+  animation: animParticleCounter 10s linear infinite
+
 @for $i from 1 through 15
   .particle-#{$i}
     //
-    $random-delay: random(10)
-    $rand-depth: random(10) / 10
-    $random-blur: (1 - $rand-depth) * 5
-    $rand: 7 + random(23)
-    $rand-height: 1 + random(15) / 10
-    //
+    $rand-depth: random(8) / 10
+    $random-blur: (1 - $rand-depth) * 6
+    $rand-time: random(15) + (1 - $rand-depth) * 60
+    $rand-height: 1 + (random(3) / 5)
+    $random-delay: ((1 - $rand-depth) * 150) - random(5)
     height: #{$rand-height}em
     animation-delay: -#{$random-delay}s
-    animation-duration: #{$rand}s
+    animation-duration: #{$rand-time}s
     filter: blur(#{$random-blur}px)
     opacity: #{$rand-depth}
+@for $i from 1 through 4
+  .particle-front-#{$i}
+    //
+    $rand-time: 8 + random(10)
+    $rand-height: 1.5 + (random(3) / 5)
+    $rand-width: 1.5 + (random(3) / 5)
+    $random-delay: random(15)
+    height: #{$rand-height}em
+    width: #{$rand-width}em
+    animation-delay: -#{$random-delay}s
+    animation-duration: #{$rand-time}s
 
 @keyframes animParticle
   from
     transform: translateY(100%) rotate(-45deg)
   to
     transform: translateY(calc(-100vh + -100%)) rotate(45deg)
+@keyframes animParticleCounter
+  from
+    transform: translateY(100%) rotate(45deg)
+  to
+    transform: translateY(calc(-100vh + -100%)) rotate(-45deg)
