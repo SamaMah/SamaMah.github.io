@@ -1,100 +1,54 @@
 // Fit page next to nav
 .page-content
   z-index: 2
-  margin-left: $nav-width
+.page-content, .particle-wrapper
+  padding-left: $nav-width
 @media screen and (max-width: 850px)
-  .page-content
-    margin-left: 200px
+  .page-content, .particle-wrapper
+    padding-left: 200px
 @media screen and (max-width: $switch-to-mobile), screen and (max-height: 425px)
-  .page-content
-    margin-left: 0
-    margin-top: 94px
+  .page-content, .particle-wrapper
+    padding-left: 0
+    padding-top: 94px
 body
   background:
     color: $bg-color
 
 // Particles
-$color-particle: #fff
-$spacing: 2560px
-$time-1: 60s
-$time-2: 120s
-$time-3: 180s
-$time-4: 200s
-
-/* mixins */
-@function particles($max)
-  $val: 0px 0px $color-particle
-  @for $i from 1 through $max
-    $val: #{$val}, random($spacing)+px random($spacing)+px $color-particle
-  @return $val
-
-@mixin particles($max)
-  box-shadow: particles($max)
-  border-radius: 50%
-
-/* Styles */
-.animation-wrapper
+.particle-wrapper
   z-index: -1
-  position: fixed
   top: 0
-  left: 0
-  width: 100%
   height: 100%
-
-.particle, .particle:after
-  background: transparent
-
-.particle:after
-  position: absolute
-  content: ""
-  top: $spacing
-
-.particle-1
-  animation: animParticle $time-1 linear infinite
-  @include particles(100)
-  height: 5px
-  width: 5px
-
-.particle-1:after
-  @include particles(100)
-  height: 2px
-  width: 2px
-
-.particle-2
-  animation: animParticle $time-2 linear infinite
-  @include particles(800)
-  height: 2px
-  width: 2px
-
-.particle-2:after
-  @include particles(500)
-  height: 3px
-  width: 3px
-
-.particle-3:after
-  @include particles(1100)
-  height: 3px
-  width: 3px
-  border-radius: 50%
-
-.particle-4
-  animation: animParticle $time-4 linear infinite
-  @include particles(1200)
-  height: 1px
-  width: 1px
-
-.particle-4:after
-  @include particles(700)
-  height: 1px
-  width: 1px
+  width: 100%
+  position: fixed
+  display: flex
+  justify-content: space-around
+.particle
+  animation: animParticle 10s linear infinite
+  align-self: flex-end
+  width: 1em
+  height: 1em
+  transform: translateY(100%)
+  background: $white
+  border-radius: 2px
+@use sass.math
+@for $i from 1 through 15
+  .particle-#{$i}
+    //
+    $random-delay: random(10)
+    $rand-depth: random(10) / 10
+    $random-blur: (1 - $rand-depth) * 5
+    $rand: 7 + random(23)
+    $rand-height: 1 + random(15) / 10
+    //
+    height: #{$rand-height}em
+    animation-delay: -#{$random-delay}s
+    animation-duration: #{$rand}s
+    filter: blur(#{$random-blur}px)
+    opacity: #{$rand-depth}
 
 @keyframes animParticle
   from
-    transform: translateY(0px)
+    transform: translateY(100%) rotate(-45deg)
   to
-    transform: translateY($spacing * -1)
-
-.page-wrapper
-  text-align: center
-  color: #fff
-  z-index: 2
+    transform: translateY(calc(-100vh + -100%)) rotate(45deg)

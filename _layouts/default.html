@@ -6,12 +6,11 @@
   </head>
   <body>
     {% include nav.html %}
-
-    <div class="animation-wrapper">
-      <div class="particle particle-1"></div>
-      <div class="particle particle-2"></div>
-      <div class="particle particle-3"></div>
-      <div class="particle particle-4"></div>
+    <div class="particle-wrapper">
+      <!-- Particle fx -->
+      {%for item in (1..15) %}
+        <div class="particle particle-{{item}}"></div>
+      {% endfor %}
     </div>
     <div class="page-content">
       {{ content }}
