@@ -21,7 +21,7 @@ layout: default
     {% assign portfolio = professional | concat: personal %}
     {% for piece in personal %}
       <!-- Project thumbnails -->
-      <div class="portfolio-thumbnail">
+      <div class="pw-thumbnail">
         <a href="{{ piece.url }}" class="btn-project-open">
           <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
         </a>
