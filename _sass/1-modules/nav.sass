@@ -28,6 +28,11 @@
     img
       width: 70px
       height: auto
+    img:hover
+      animation: rotatelogo 2s infinite ease-in-out
+      @keyframes rotatelogo
+        to
+          transform: rotateY(360deg)
 /* NAVIGATION BAR */
 .nav-bar
   display: flex

@@ -18,3 +18,8 @@ navSlide();
    // Toggle dropdown
    $('html').toggleClass('dropdown-active');
  });
+
+$('.cube-container').on('click', function(){
+  // Toggle nav
+  $('html').toggleClass('cube-rotate');
+});
