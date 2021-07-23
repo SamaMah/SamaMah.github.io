@@ -11,6 +11,7 @@
     cursor: pointer
     display: flex
     img
+      border-radius: 1em
       padding: 4px
       transition: all 0.2s ease
       width: 100%
@@ -21,20 +22,22 @@
   height: 200px
   a
     img
+      border-radius: 1em
       padding: 3px
       width: 100%
       height: 100%
       object-fit: cover
 .pw-thumbnail, .projects-thumbnail
-  transition: all 0.2s ease-in-out
   a
+    img
+      transition: all 0.2s ease-in-out
     img:hover
       opacity: 0.5
     img:hover
       transform: scale(0.9)
 
 @media screen and (max-width: 500px)
-  .portfolio-thumbnail, .projects-thumbnail
+  .pw-thumbnail
     max-width: 160px
 
 //
