@@ -19,7 +19,7 @@ navSlide();
    $('html').toggleClass('dropdown-active');
  });
 
-$('.cube-container').on('click', function(){
+$('.cube').on('click', function(){
   // Toggle nav
   $('html').toggleClass('cube-rotate');
 });
