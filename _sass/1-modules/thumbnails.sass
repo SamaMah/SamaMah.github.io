@@ -4,35 +4,34 @@
   flex-flow: row wrap
   justify-content: center
   margin: 20px 0
-.portfolio-thumbnail
-  transition: all 0.2s ease-in-out
+//
+.pw-thumbnail
   max-width: 250px
   a
     cursor: pointer
     display: flex
     img
+      padding: 4px
       transition: all 0.2s ease
       width: 100%
       height: auto
+//
+.projects-thumbnail
+  width: 400px
+  height: 200px
+  a
+    img
+      padding: 3px
+      width: 100%
+      height: 100%
+      object-fit: cover
+.pw-thumbnail, .projects-thumbnail
+  transition: all 0.2s ease-in-out
+  a
     img:hover
       opacity: 0.5
     img:hover
       transform: scale(0.9)
-
-.projects-thumbnail
-  transition: all 0.2s ease-in-out
-  max-width: 250px
-  a
-    cursor: pointer
-    display: flex
-    flex-direction: column
-    width: 100%
-    height: auto
-    img
-      width: 100%
-      height: auto
-    img:hover
-      opacity: 0.5
 
 @media screen and (max-width: 500px)
   .portfolio-thumbnail, .projects-thumbnail

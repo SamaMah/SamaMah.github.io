@@ -19,7 +19,7 @@ permalink: /personal-work/
     {% assign portfolio = site.portfolio | sort: 'order' %}
     {% for piece in portfolio %}
       <!-- Project thumbnails -->
-      <div class="portfolio-thumbnail">
+      <div class="pw-thumbnail">
         <a href="{{ piece.url }}" class="btn-project-open">
           <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
         </a>

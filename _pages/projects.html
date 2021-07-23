@@ -11,7 +11,7 @@ permalink: /projects/
       <!-- Project thumbnails -->
       <div class="projects-thumbnail">
         <a href="{{ piece.url }}" class="btn-project-open">
-          <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
+          <img src="{{ site.baseurl }}{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
         </a>
       </div>
     {% endfor %}
