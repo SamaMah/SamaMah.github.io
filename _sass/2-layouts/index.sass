@@ -1,27 +1,27 @@
 .banner-container
   display: flex
   flex-flow: column
-  height: calc(100% - 94px)
-  justify-content: center
-  padding: 2em 0
   div
+    position: relative
+    height: 230px
+    width: 100%
     margin-bottom: 5em
     background-color: rgba($banner-color, 0.6)
     a
+      position: relative
       display: flex
-      height: 230px
+      height: inherit
       justify-content: center
       align-items: center
-      color: $white
       img
-        width: inherit
-        height: 200px
         position: absolute
+        // display: flex
+        width: 900px
+        height: 100%
+        object-fit: cover
+        object-position: center 20%
       p
         position: absolute
-        display: inline-flex
-        font-family: "PWFicelles"
-        font-size: 2.5em
   div:last-of-type
     margin-bottom: 0
   div:hover
