@@ -26,7 +26,7 @@
   .particle-#{$i}
     $rand-depth: 0.25 + (random(8) / 10)
     $random-blur: (1 - $rand-depth) * 5
-    $rand-time: random(15) + (1 - $rand-depth) * 60
+    $rand-time: 15 + random(10) + (1 - $rand-depth) * 60
     $rand-height: 1 + (random(3) / 5)
     $random-delay: ((1 - $rand-depth) * 150) - random(5)
     height: #{$rand-height}em
@@ -40,7 +40,7 @@
 // front
 @for $i from 1 through 4
   .particle-front-#{$i}
-    $rand-time: 13 + random(7)
+    $rand-time: 15 + random(15)
     $rand-height: 1.5 + (random(3) / 5)
     $rand-width: 1.5 + (random(3) / 5)
     $random-delay: random(15)
