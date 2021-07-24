@@ -4,26 +4,26 @@
   padding: 3em 0
   div
     position: relative
-    height: 230px
     width: 100%
     margin-bottom: 4em
-    background-color: rgba($banner-color, 0.6)
+    background-color: rgba($banner-color, 0.01)
     a
-      position: relative
       display: flex
       height: inherit
       justify-content: center
       align-items: center
-      img
-        position: absolute
-        // display: flex
-        width: 900px
-        height: 100%
-        object-fit: cover
-        object-position: center 20%
+      .img-container
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        img
+          max-width: 570px
+          max-height: 230px
+          object-fit: contain
       p
         position: absolute
   div:last-of-type
     margin-bottom: 0
   div:hover
-    background-color: rgba($banner-color, 0.3)
+    background-color: rgba($banner-color, 0.8)
