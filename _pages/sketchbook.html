@@ -10,6 +10,6 @@ permalink: /sketchbook/
 <div class="sketchbook-container">
   {% assign sketchbook = site.data.sketchbook %}
   {% for img in sketchbook.img-links %}
-    <img src="{{ img }}" alt="">
+    <a data-lightbox="sketchbook-gallery" href="{{ img }}"><img src="{{ img }}" alt=""></a>
   {% endfor %}
 </div>
