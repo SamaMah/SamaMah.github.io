@@ -2,26 +2,28 @@
   display: flex
   flex-flow: column
   padding: 3em 0
+  max-height: 100%
   div
     position: relative
     width: 100%
-    margin-bottom: 4em
+    margin-bottom: 3em
     background-color: rgba($banner-color, 0.01)
+    justify-content: center
     a
       display: flex
       justify-content: center
       align-items: center
       .img-container
         display: flex
-        width: 570px
-        height: auto
         justify-content: center
         align-items: center
         img
           display: flex
+          width: 570px
+          max-height: 230px
           max-width: 100%
-          height: auto
-          object-fit: contain
+          justify-content: center
+          align-items: center
       p
         position: absolute
   div:last-of-type
