@@ -1,9 +1,9 @@
 // Mobile nagigation pop-up
 const navSlide = function(){
-  const navIcon = $('.nav-icon-open-wrapper');
+  const navToggle = $('.nav-icon-open-wrapper, .nav-body-overlay');
   const nav = $('.nav-links');
 
-  navIcon.on('click', function(){
+  navToggle.on('click', function(){
     // Toggle nav
     $('html').toggleClass('nav-active');
     // Nav button animation
@@ -20,6 +20,6 @@ navSlide();
  });
 
 $('.cube').on('click', function(){
-  // Toggle nav
+  //
   $('html').toggleClass('cube-rotate');
 });
