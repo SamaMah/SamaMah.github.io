@@ -1,4 +1,5 @@
-
+.about-body-container
+  margin: 0 30px
 .profile-title
   margin-top: 100px
   text-align: center
@@ -28,11 +29,31 @@ a.profile-avatar
     height: 75px
     width: 75px
     margin-bottom: -43px
+//
 .about-text-container
-  display: flex
-  flex-direction: row
-  max-width: 500px
-  margin: 1em auto
+  display: block
+  justify-content: center
+  align-items: center
+  text-align: center
+  margin: 1.5em auto
   padding: 1em
   border-radius: 1em
-  background-color: $container-color
+  max-width: 900px
+  background:
+    color: $container-color
+  p
+    text-align: center
+    font-size: 15px
+    a
+      font-weight: bold
+      color: #FE9920
+  ul
+    display: flex
+    flex-direction: row
+    justify-content: center
+    li
+      padding: 3px 5px
+      border-radius: 5px
+      margin: 5px
+      border: 2px solid $white
+      list-style: none
