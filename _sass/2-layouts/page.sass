@@ -8,13 +8,17 @@
 // General page layout
 .portfolio-page-layout
   width: 85%
-  margin: 0 auto
+  margin: 10px auto
 .page-title-container
   display: flex
   justify-content: center
   padding: 10px 0
   h1
     text-align: center
+h1.page-title
+  padding: 20px
+h2.piece-subtitle
+  text-align: center
 //
 .page-content-container
   display: block
@@ -26,7 +30,10 @@
   .image-side-by-side
     display: flex
     flex-direction: row
+    img
+      padding: 3px
   img
+    padding: 3px
     width: 100%
     height: auto
   p
@@ -41,10 +48,24 @@
   border-radius: 1em
   max-width: 900px
   background:
-    color: $nav-color
+    color: $container-color
   p
     text-align: center
     font-size: 15px
+    a
+      font-weight: bold
+      color: #FE9920
+.piece-tag
+  padding-top: 1em
+  display: flex
+  flex-flow: wrap row
+  justify-content: center
+  li
+    padding: 3px 5px
+    border-radius: 5px
+    margin: 0 5px
+    border: 2px solid $white
+    list-style: none
 
 @media screen and (max-width: 1300px)
   .image-container
@@ -56,6 +77,7 @@
   padding-bottom: 56.25%
   position: relative
   height: 0
+  margin: 10px
   iframe
     left: 0
     top: 0
