@@ -2,13 +2,12 @@
 layout: default
 ---
 
-<div class="banner-container">
+<!-- <div class="banner-container">
   <div class="projects-banner">
     <a href="{{ site.baseurl }}/projects">
       <div class="img-container">
         <img alt="" src="{{ baseurl }}/assets/img/thumbnails/projects-banner.png">
       </div>
-      <!-- <p>Projects</p> -->
     </a>
   </div>
   <div class="personal-work-banner">
@@ -16,7 +15,6 @@ layout: default
       <div class="img-container">
         <img alt="" src="{{ baseurl }}/assets/img/thumbnails/personal-work-banner.png">
       </div>
-      <!-- <p>Personal Work</p> -->
     </a>
   </div>
   <div class="sketchbook-banner">
@@ -24,7 +22,12 @@ layout: default
       <div class="img-container">
         <img alt="" src="{{ baseurl }}/assets/img/thumbnails/sketchbook-banner.png">
       </div>
-      <!-- <p>Sketchbook</p> -->
     </a>
   </div>
-</div>
+</div> -->
+
+{% include_relative _pages/projects.html %}
+
+{% include_relative _pages/personal_work.html %}
+
+{% include_relative _pages/sketchbook.html %}
