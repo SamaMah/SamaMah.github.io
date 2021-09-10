@@ -35,7 +35,7 @@
           transform: rotateY(360deg)
 /* NAVIGATION BAR */
 .nav-bar
-  display: flex
+  display: none
   margin-left: 20px
   margin-top: 50px
   /* NAVIGATION LIST */
@@ -86,10 +86,12 @@ ul.dropdown-menu
   transform: translateX(100%)
 
 // Switch to mobile navigation
-@media screen and (max-width: 850px)
+@media screen and (max-width: 1100px)
   .nav-header
-    width: 200px
+    width: 450px
 @media screen and (max-width: $switch-to-mobile), screen and (max-height: 425px)
+  .profile-container
+    display: none
   .nav-header
     z-index: 100
     transition: none
@@ -100,6 +102,7 @@ ul.dropdown-menu
     .nav-logo
       padding-top: 0
   .nav-bar
+    display: flex
     margin: auto
     .nav-links
       z-index: 101
