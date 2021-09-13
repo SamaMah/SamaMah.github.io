@@ -9,7 +9,14 @@
 
   <!-- Nav links -->
   <nav class="nav-bar">
-    <ul class="nav-links">
+    <div class="profile-container">
+      <div class="profile-title">
+        <h1>{{ site.data.site.name }}</h1>
+        <h3>Generalist - 2D/3D Artist</h3>
+      </div>
+        {% include shaders/cube.html %}
+    </div>
+    <!-- <ul class="nav-links">
       <li><a href="{{ site.baseurl }}/">Home</a></li>
         <ul class="dropdown-menu">
           <li><a href="{{ site.baseurl }}/projects"> - Projects</a></li>
@@ -17,7 +24,7 @@
           <li><a href="{{ site.baseurl }}/sketchbook"> - Sketchbook</a></li>
         </ul>
       <li><a href="{{ site.baseurl }}/about">About</a></li>
-    </ul>
+    </ul> -->
     <div class="nav-body-overlay"></div>
     <div class="nav-icon-open-wrapper">
       <div class="line1"></div>
@@ -25,12 +32,5 @@
       <div class="line3"></div>
     </div>
   </nav>
-  <div class="profile-container">
-    <div class="profile-title">
-      <h1>{{ site.data.site.name }}</h1>
-      <h3>Generalist - 2D/3D Artist</h3>
-    </div>
-      {% include shaders/cube.html %}
-  </div>
 </header>
 <!-- End Navigation -->
