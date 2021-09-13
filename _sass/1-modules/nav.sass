@@ -46,22 +46,6 @@
   justify-content: center
   margin-left: 20px
   margin-top: 50px
-  /* NAVIGATION LIST */
-  .nav-links
-    li
-      list-style: none
-      padding-top: 10px
-      a
-        line-height: 30px
-        color: $text-color
-        letter-spacing: 3px
-      a:hover
-        color: darken($text-color, 20%)
-//
-ul.dropdown-menu
-  li
-    padding-left: 1.5em
-    font-size: 80%
 // Mobile nav icon
 .nav-icon-open-wrapper
   display: none
@@ -111,15 +95,6 @@ ul.dropdown-menu
   .nav-bar
     display: flex
     margin: auto
-    .nav-links
-      z-index: 101
-      position: fixed
-      height: 100vh
-      background: $nav-color
-      width: 60%
-      transform: translateX(-100%)
-      li
-        padding-left: 30px
   .nav-icon-open-wrapper
     display: block
     position: fixed
@@ -127,7 +102,7 @@ ul.dropdown-menu
     left: 1.5em
   html.nav-active
     body
-      overflow: hidden
+      // overflow: hidden
       position: fixed
       top: 0
       bottom: 0
@@ -137,10 +112,8 @@ ul.dropdown-menu
     //   opacity: 1
     //   transition: opacity 0.2s ease-in-out, transform 0s
     //   transform: translateX(0)
-    .nav-links
-      opacity: 1
-      transition: all 0.3s ease
-      transform: translateX(0)
+    .nav-bar
+      height: 100vh
     .profile-container
       display: flex
       flex-direction: column
