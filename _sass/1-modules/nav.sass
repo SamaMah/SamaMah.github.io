@@ -33,12 +33,12 @@
         to
           transform: rotateY(360deg)
 // scroll-hide
-.nav-header
+.nav-header, .profile-container-open
   -ms-overflow-style: none
   scrollbar-width: none
   overflow-y : auto
 // chrome
-.nav-header::-webkit-scrollbar
+.nav-header::-webkit-scrollbar, .profile-container-open::-webkit-scrollbar
   display: none
 /* NAVIGATION BAR */
 .nav-bar
@@ -76,6 +76,16 @@
   opacity: 0
   transform: translateX(100%)
 
+.profile-container-open
+  background-color: #DD6755
+  position: fixed
+  padding: 10px
+  align-items: center
+  justify-content: center
+  padding-top: 94px
+  width: 100vw
+  height: 100vh
+  transform: translateY(-200%)
 // Switch to mobile navigation
 @media screen and (max-width: 1155px)
   .nav-header
@@ -86,6 +96,7 @@
   .nav-header
     z-index: 100
     transition: none
+    overflow-y: hidden
     // Top header
     width: 100%
     height: auto
@@ -112,8 +123,8 @@
     //   opacity: 1
     //   transition: opacity 0.2s ease-in-out, transform 0s
     //   transform: translateX(0)
-    .nav-bar
-      height: 100vh
-    .profile-container
-      display: flex
-      flex-direction: column
+    .profile-container-open
+      // display: flex
+      // flex-direction: column
+      transition: transform 0.4s ease
+      transform: translateX(0)
