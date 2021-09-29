@@ -1,4 +1,7 @@
 //
+.project-thumbnail-cointainer
+  h1
+    padding: 15px 0
 .project-wrap
   display: flex
   flex-flow: row wrap
@@ -7,6 +10,7 @@
 //
 .pw-thumbnail
   max-width: 250px
+  display: none
   a
     cursor: pointer
     display: flex
@@ -17,6 +21,9 @@
       width: 100%
       height: auto
 //
+.show
+  display: block
+
 .projects-thumbnail
   width: 350px
   a
@@ -38,3 +45,19 @@
 @media screen and (max-width: 500px)
   .pw-thumbnail
     max-width: 160px
+
+//
+.myBtnContainer
+  display: flex
+  justify-content: center
+  .btn
+    border: none
+    outline: none
+    padding: 12px 16px
+    background-color: #f1f1f1
+    cursor: pointer
+  .btn:hover
+    background-color: #ddd
+  .btn.active
+    background-color: #666
+    color: white

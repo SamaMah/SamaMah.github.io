@@ -1,20 +1,18 @@
 <!-- Page Title  -->
 <h1 class="page-title">Personal Work</h1>
 <!-- Filters -->
-<!-- <ul class="filter-list">
-  <li>all</li>
-  <p>/</p>
-  <li>3d</li>
-  <p>/</p>
-  <li>2d</li>
-</ul> -->
+<div class="myBtnContainer" id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')">All</button>
+  <button class="btn" onclick="filterSelection('2D')">2D</button>
+  <button class="btn" onclick="filterSelection('3D')">3D</button>
+</div>
 <!-- Portfolio list -->
 <div class="project-thumbnail-cointainer">
   <div class="project-wrap">
     {% assign portfolio = site.portfolio | sort: 'order' %}
     {% for piece in portfolio %}
       <!-- Project thumbnails -->
-      <div class="pw-thumbnail">
+      <div class="pw-thumbnail {{ piece.tag }}">
         <a href="{{ piece.url }}" class="btn-project-open">
           <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
         </a>

@@ -15,13 +15,19 @@ layout: default
 <!-- Portfolio piece list -->
 <div class="project-thumbnail-cointainer">
   <h1>Personal Work</h1>
+  <!-- Filters -->
+  <div class="myBtnContainer" id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')">All</button>
+    <button class="btn" onclick="filterSelection('2D')">2D</button>
+    <button class="btn" onclick="filterSelection('3D')">3D</button>
+  </div>
   <div class="project-wrap">
     {% assign personal = site.portfolio | sort: 'order' %}
     {% assign professional = site.projects | sort: 'order' %}
     {% assign portfolio = professional | concat: personal %}
     {% for piece in personal %}
       <!-- Project thumbnails -->
-      <div class="pw-thumbnail">
+      <div class="pw-thumbnail {{ piece.tag }}">
         <a href="{{ piece.url }}" class="btn-project-open">
           <img src="{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
         </a>
