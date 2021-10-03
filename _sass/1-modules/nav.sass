@@ -46,8 +46,6 @@
 .nav-bar
   display: none
   justify-content: center
-  margin-left: 20px
-  margin-top: 50px
 // Mobile nav icon
 .nav-icon-open-wrapper
   display: none
@@ -65,18 +63,6 @@
   opacity: 0
 .toggle .line3
   transform: translate(-0px, -9px) rotate(-45deg)
-
-.nav-body-overlay
-  z-index: 100
-  transition: opacity 0.2s ease-in-out, transform 0s ease-in-out 0.2s
-  display: block
-  position: fixed
-  left: 0
-  width: 100%
-  height: 100%
-  background: #00000099
-  opacity: 0
-  transform: translateX(100%)
 
 .profile-container-open
   z-index: 90
@@ -116,7 +102,7 @@
     display: block
     position: fixed
     top: 1.5em
-    left: 1.5em
+    right: 1.5em
   html.nav-active
     body
       // overflow: hidden
@@ -132,5 +118,5 @@
     .profile-container-open
       // display: flex
       // flex-direction: column
-      transition: transform 0.4s ease
+      transition: transform 0.6s ease
       transform: translateX(0)
