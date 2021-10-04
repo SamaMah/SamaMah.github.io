@@ -8,11 +8,13 @@
   justify-content: center
   align-items: center
   padding: 30px 0
-  img
-    border-radius: 5px
-    transition: 0.3s
-    padding: 7px
+  a
     max-height: 300px
+  img
+    transition: 0.3s
+    padding: 4px
+    border-radius: 8px
+    max-height: inherit
     object-fit: cover
   img:hover
     transform: scale(1.03)
@@ -20,12 +22,12 @@
     filter: opacity(70%)
 @media screen and (max-width: 1200px)
   .sketchbook-container
-    img
+    a
       // width: 250px
       max-height: 250px
 @media screen and (max-width: 500px)
   .sketchbook-container
-    img
+    a
       // width: 150px
       max-height: 150px
 // @for $i from 1 through 2
