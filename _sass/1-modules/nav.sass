@@ -98,11 +98,13 @@
   .nav-bar
     display: flex
     margin: auto
-  .nav-icon-open-wrapper
-    display: block
-    position: fixed
-    top: 1.5em
-    left: 1.5em
+    .nav-icon-open-wrapper
+      display: block
+      position: fixed
+      top: 1.5em
+      left: 1.5em
+    .nav-links
+      display: none
   html.nav-active
     body
       // overflow: hidden
@@ -115,8 +117,5 @@
     //   opacity: 1
     //   transition: opacity 0.2s ease-in-out, transform 0s
     //   transform: translateX(0)
-    .profile-container-open
-      // display: flex
-      // flex-direction: column
-      transition: transform 0.6s ease
-      transform: translateX(0)
+    .nav-links
+      display: block
