@@ -3,13 +3,4 @@ layout: default
 permalink: /sketchbook/
 ---
 
-<!-- Page Title  -->
-<h1 class="page-title sketchbook-title">Sketchbook</h1>
-  <div class="project-wrap">
-    <div class="sketchbook-container">
-      {% assign sketchbook = site.data.sketchbook %}
-      {% for img in sketchbook.img-links %}
-        <a data-lightbox="sketchbook-gallery" href="{{ img }}"><img src="{{ img }}" alt=""></a>
-      {% endfor %}
-    </div>
-</div>
+{% include pages/sketchbook-content.html %}
