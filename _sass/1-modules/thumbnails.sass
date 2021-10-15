@@ -16,7 +16,7 @@
     display: flex
     img
       border-radius: 1em
-      padding: 4px
+      padding: 3px
       transition: all 0.2s ease
       width: 100%
       height: auto
@@ -26,14 +26,14 @@
 
 .projects-thumbnail
   width: 250px
-  margin: 0px 2px
   a
     img
       border-radius: 1em
       padding: 3px
+      transition: all 0.2s ease
       width: 100%
-      height: 100%
-      object-fit: cover
+      height: auto
+
 .pw-thumbnail, .projects-thumbnail
   a
     img
@@ -44,7 +44,7 @@
       transform: scale(0.93)
 
 @media screen and (max-width: 500px)
-  .pw-thumbnail
+  .pw-thumbnail, .projects-thumbnail
     max-width: 160px
 
 //
