@@ -6,7 +6,7 @@
     {% assign projects = site.projects | sort: 'order' %}
     {% for piece in projects %}
       <!-- Project thumbnails -->
-      <div class="projects-thumbnail">
+      <div class="pw-thumbnail">
         <a href="{{ piece.url }}" class="btn-project-open">
           <img src="{{ site.baseurl }}{{ piece.thumbnail_url }}" alt="{{ piece.title }}">
         </a>
