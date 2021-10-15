@@ -1,20 +1,28 @@
 <!-- Header -->
 <header class="nav-header" role="banner">
+  <div class="nav-body-overlay"></div>
   <!-- Site Logo -->
   <div class="nav-logo">
     <a href="{{ site.baseurl }}/">
       <img src="{{ site.baseurl }}/assets/img/logostandin.png" href="{{ site.baseurl }}/"></img>
     </a>
   </div>
-
   <!-- Nav links -->
   <nav class="nav-bar">
-    <div class="nav-body-overlay"></div>
     <div class="nav-icon-open-wrapper">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
     </div>
+    <ul class="nav-links nav-desktop">
+      <!-- <li><a href="{{ site.baseurl }}/">Home</a></li> -->
+      <li><a href="{{ site.baseurl }}/work">Work</a></li>
+      <li><a href="{{ site.baseurl }}/personal-work">Personal work</a></li>
+      <li><a href="{{ site.baseurl }}/sketchbook">Sketchbook</a></li>
+      <li><a href="{{ site.baseurl }}/about">About</a></li>
+    </ul>
+  </nav>
+  <div class="nav-mobile">
     <ul class="nav-links">
       <!-- <li><a href="{{ site.baseurl }}/">Home</a></li> -->
       <li><a href="{{ site.baseurl }}/work">Work</a></li>
@@ -22,8 +30,6 @@
       <li><a href="{{ site.baseurl }}/sketchbook">Sketchbook</a></li>
       <li><a href="{{ site.baseurl }}/about">About</a></li>
     </ul>
-
-  </nav>
+  </div>
 </header>
-
 <!-- End Navigation -->
