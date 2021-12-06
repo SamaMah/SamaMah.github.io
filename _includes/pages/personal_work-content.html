@@ -10,7 +10,7 @@
 <div class="project-thumbnail-cointainer">
   <div class="project-wrap">
     {% assign portfolio = site.portfolio | sort: 'order' %}
-    {% for piece in portfolio %}
+    {% for piece in portfolio reversed %}
       <!-- Project thumbnails -->
       <div class="pw-thumbnail {{ piece.tag }}">
         <a href="{{ piece.url }}" class="btn-project-open">
