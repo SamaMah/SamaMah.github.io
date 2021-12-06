@@ -25,7 +25,7 @@ layout: default
     {% assign personal = site.portfolio | sort: 'order' %}
     {% assign professional = site.projects | sort: 'order' %}
     {% assign portfolio = professional | concat: personal %}
-    {% for piece in personal %}
+    {% for piece in personal reversed %}
       <!-- Project thumbnails -->
       <div class="pw-thumbnail {{ piece.tag }}">
         <a href="{{ piece.url }}" class="btn-project-open">
