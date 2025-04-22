@@ -82,15 +82,15 @@
 .nav-links.nav-desktop {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
-  margin-left: 0;
-  width: 100%;
+  margin: 0 auto; // horizontally centers the whole list block
+  width: max-content; // shrink to fit the widest list item
+  text-align: left; // important: ensures text is left-aligned
 
   li {
-    text-align: center;
     padding: 20px 0;
 
     a {
+      display: block; // makes padding consistent
       color: $nav-text-color;
       text-decoration: none;
       letter-spacing: 2px;
@@ -101,6 +101,7 @@
     }
   }
 }
+
 
 // MOBILE SLIDE-IN MENU
 .nav-mobile {
@@ -151,8 +152,6 @@
     height: $nav-mobile-height;
     width: 100%;
 
-    .nav-logo {
-    }
     .nav-bar {
       flex-direction: row;
       width: 100%;
