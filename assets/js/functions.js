@@ -1,18 +1,28 @@
-// Mobile nagigation pop-up
+// Mobile navigation pop-up
 const navSlide = function(){
   const navToggle = $('.nav-icon-open-wrapper, .nav-body-overlay');
   const nav = $('.nav-links');
+  const navLinks = $('.nav-mobile .nav-links a'); // Select all links inside mobile nav
 
+  // Toggle nav when hamburger or overlay is clicked
   navToggle.on('click', function(){
-    // Toggle nav
     $('html').toggleClass('nav-active');
-    // Nav button animation
     $('.nav-icon-open-wrapper').toggleClass('toggle');
+  });
+
+  // Close the mobile nav when a link is clicked
+  navLinks.on('click', function() {
+    if ($('html').hasClass('nav-active')) {
+      $('html').removeClass('nav-active');
+      $('.nav-icon-open-wrapper').removeClass('toggle'); // Reset hamburger animation
+    }
   });
 }
 navSlide();
+
 const mobileBreakpoint = 900; // Replace with the actual px value of your $switch-to-mobile
 
+// Reset nav on resize
 $(window).on('resize', function () {
   if ($(window).width() > mobileBreakpoint) {
     $('html').removeClass('nav-active');
@@ -20,31 +30,23 @@ $(window).on('resize', function () {
   }
 });
 
-//dropdown
- $('.portfolio-dropdown').on('click', function(){
-   // Toggle dropdown
-   $('html').toggleClass('dropdown-active');
- });
-
-$('.cube').on('click', function(){
-  //
-  $('html').toggleClass('cube-rotate');
+// Dropdown functionality
+$('.portfolio-dropdown').on('click', function(){
+  $('html').toggleClass('dropdown-active');
 });
 
-// Filters
+// Filters functionality
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("pw-thumbnail");
   if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
   }
 }
 
-// Show filtered elements
 function AddClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -56,7 +58,6 @@ function AddClass(element, name) {
   }
 }
 
-// Hide elements that are not selected
 function RemoveClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -79,28 +80,3 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
-
-//Page transitions
-barba.init({
-  transitions: [{
-    name: 'horizontal-slide-fade',
-    leave(data) {
-      // Slide current page to the left and fade out
-      return gsap.to(data.current.container, {
-        opacity: 0,
-        x: '-100%', // Slide to the left
-        duration: 0.6,
-        ease: "power2.inOut"
-      });
-    },
-    enter(data) {
-      // Slide new page from the right and fade in
-      return gsap.from(data.next.container, {
-        opacity: 0,
-        x: '100%', // Slide in from the right
-        duration: 0.6,
-        ease: "power2.out"
-      });
-    }
-  }]
-});

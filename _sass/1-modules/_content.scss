@@ -1,18 +1,37 @@
 // Fit page next to nav
 .page-content {
   z-index: 2;
-}
-.wrapper {
-  margin-left: $nav-width;
-}
-/**
- * Page content
- */
- .page-content {
   padding: $spacing-unit 0;
   flex: 1;
 }
 
+.wrapper {
+  margin-left: $nav-width;
+}
+
+/**
+ * Page layout flex structure
+ */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+// Ensure <main> grows to fill space if needed
+.page-content {
+  flex: 1;
+}
+
+/**
+ * Headings and post list
+ */
 .page-heading {
   @include relative-font-size(2);
 }
@@ -39,7 +58,6 @@
   display: block;
   @include relative-font-size(1.5);
 }
-
 
 /**
  * Posts
@@ -86,19 +104,21 @@
   }
 }
 
+/**
+ * Responsive layout
+ */
 @media screen and (max-width: $switch-to-tablet) {
   .wrapper {
     margin-left: $nav-width-tab;
   }
 }
+
 @media screen and (max-width: $switch-to-mobile), screen and (max-height: 425px) {
   .wrapper {
     margin-left: 0;
   }
+
   .page-content {
     padding: ($nav-mobile-height + $spacing-unit) 0;
-    flex: 1;
   } 
 }
-
-

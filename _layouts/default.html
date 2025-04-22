@@ -3,21 +3,23 @@
 
   {%- include head.html -%}
 
-  <body data-barba="wrapper">
+  <body data-barba="wrapper" class="page-wrapper">
 
     {%- include nav.html -%}
-
-    <main class="page-content" aria-label="Content" data-barba="container" data-barba-namespace="{{ page.layout }}">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
-
-
+  
+    <div id="barba-container" class="page-inner">
+      <main class="page-content" aria-label="Content" data-barba="container" data-barba-namespace="{{ page.layout }}">
+        <div class="wrapper">
+          {{ content }}
+        </div>
+      </main>
+    </div>
+  
     {%- include footer.html -%}
-
     {% include js-link.html %}
-
+  
   </body>
+  
+  
 
 </html>
