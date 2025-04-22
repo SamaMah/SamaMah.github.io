@@ -1,35 +1,48 @@
-<!-- Header -->
+<!-- Fixed vertical sidebar -->
 <header class="nav-header" role="banner">
-  <div class="nav-body-overlay"></div>
-  <!-- Site Logo -->
+  <!-- Logo at the top -->
   <div class="nav-logo">
-    <a href="{{ site.baseurl }}/">
-      <img src="{{ site.baseurl }}/assets/img/logostandin.png" href="{{ site.baseurl }}/"></img>
+    <a href="{{ site.baseurl }}/" aria-label="Homepage">
+      <img src="{{ site.baseurl }}/assets/img/Sama_Logo.png" alt="Sama Logo">
     </a>
   </div>
-  <!-- Nav links -->
-  <nav class="nav-bar">
-    <div class="nav-icon-open-wrapper">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-    <ul class="nav-links nav-desktop">
-      <!-- <li><a href="{{ site.baseurl }}/">Home</a></li> -->
-      <li><a href="{{ site.baseurl }}/films&series">Films & Series</a></li>
-      <li><a href="{{ site.baseurl }}/personal-work">Personal work</a></li>
-      <li><a href="{{ site.baseurl }}/sketchbook">Sketchbook</a></li>
-      <li><a href="{{ site.baseurl }}/about">About</a></li>
-    </ul>
-  </nav>
-  <div class="nav-mobile">
-    <ul class="nav-links">
-      <!-- <li><a href="{{ site.baseurl }}/">Home</a></li> -->
-      <li><a href="{{ site.baseurl }}/films&series">Films & Series</a></li>
-      <li><a href="{{ site.baseurl }}/personal-work">Personal work</a></li>
-      <li><a href="{{ site.baseurl }}/sketchbook">Sketchbook</a></li>
-      <li><a href="{{ site.baseurl }}/about">About</a></li>
-    </ul>
-  </div>
+
+  <!-- Desktop and Mobile Nav Toggle -->
+  {%- assign default_paths = site.pages | map: "path" -%}
+  {%- assign page_paths = site.header_pages | default: default_paths -%}
+  {%- if page_paths -%}
+    <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+      
+      <!-- Hamburger Icon (mobile only) -->
+      <div class="nav-icon-open-wrapper">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <!-- Desktop Nav (vertical) -->
+      <ul class="nav-links nav-desktop">
+        {%- assign my_pages = site.pages | where_exp: "page", "page_paths contains page.path" -%}
+        {%- assign sorted_pages = my_pages | sort: "order" -%}
+        {%- for my_page in sorted_pages -%}
+          {%- if my_page.title -%}
+            <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </nav>
+  {%- endif -%}
 </header>
-<!-- End Navigation -->
+
+<!-- Separate Mobile Overlay & Menu (outside header) -->
+<div class="nav-body-overlay" onclick="toggleMobileNav()" aria-hidden="true"></div>
+
+<nav class="nav-mobile" id="mobileNav" aria-label="Mobile menu">
+  <ul class="nav-links">
+    {%- for my_page in sorted_pages -%}
+      {%- if my_page.title -%}
+        <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</nav>

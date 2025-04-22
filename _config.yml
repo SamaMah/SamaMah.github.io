@@ -18,30 +18,23 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+title: Sama Portfolio
+email: your-email@example.com
+description: "" # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://samamah.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://samacg.com" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: "Sama"
+github_username:  SamaMah
 
 # Build settings
-permalink: pretty
-
+theme: minima
 plugins:
   - jekyll-feed
-  # - jekyll-autoprefixer
 sass:
   sass_dir: _sass
   style: compressed
 
-include:
-  - _pages
-  # - _portfolio
 
-collections:
-  portfolio:
-    output: true
-  projects:
-    output: true
-  shaders:
-    output: true
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

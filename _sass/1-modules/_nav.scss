@@ -1,0 +1,191 @@
+// OVERLAY
+.nav-body-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 90;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+// MAIN LEFT SIDEBAR HEADER (desktop)
+.nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $nav-width;
+  height: 100vh;
+  background-color: $nav-color;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+
+  .nav-logo {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100px;
+      height: auto;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+// HAMBURGER ICON (mobile only)
+.nav-icon-open-wrapper {
+  z-index: 300;
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: 1.5em;
+  left: 1.5em;
+
+  div {
+    height: 4px;
+    width: 27px;
+    margin: 5px 0;
+    background-color: $black;
+    transition: all 0.3s ease;
+  }
+}
+
+// Hamburger toggle animation
+.toggle .line1 {
+  transform: translateY(9px) rotate(45deg);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+// DESKTOP NAV
+.nav-links.nav-desktop {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  margin-left: 0;
+  width: 100%;
+
+  li {
+    text-align: center;
+    padding: 20px 0;
+
+    a {
+      color: $nav-text-color;
+      text-decoration: none;
+      letter-spacing: 2px;
+
+      &:hover {
+        color: darken($nav-text-color, 20%);
+      }
+    }
+  }
+}
+
+// MOBILE SLIDE-IN MENU
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: $container-color;
+  transform: translateX(-100%);
+  z-index: 95;
+  transition: transform 0.3s ease;
+  display: none;
+  flex-direction: column;
+  padding: $nav-mobile-height 20px 20px;
+
+  .nav-links {
+    list-style: none;
+
+    li {
+      padding: 15px 0;
+
+      a {
+        color: $nav-text-color;
+
+        &:hover {
+          color: darken($nav-text-color, 20%);
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE BEHAVIOR (Tablet View)
+@media screen and (max-width: $switch-to-tablet) {
+  .nav-header {
+    width: $nav-width-tab;
+  }
+}
+
+// RESPONSIVE BEHAVIOR (Mobile View)
+@media screen and (max-width: $switch-to-mobile), screen and (max-height: 425px) {
+  .nav-header {
+    display: flex;
+    align-items: center; // vertically center children
+    justify-content: space-between; // logo + nav icon if needed
+    padding: 0;
+    height: $nav-mobile-height;
+    width: 100%;
+
+    .nav-logo {
+    }
+    .nav-bar {
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+
+  .nav-icon-open-wrapper {
+    display: block;
+  }
+
+  .nav-links.nav-desktop {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+  }
+}
+
+// ACTIVE MOBILE STATE
+html.nav-active {
+  body {
+    overflow: hidden;
+  }
+
+  .nav-body-overlay {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .nav-mobile {
+    transform: translateX(0);
+  }
+}

@@ -11,7 +11,14 @@ const navSlide = function(){
   });
 }
 navSlide();
+const mobileBreakpoint = 900; // Replace with the actual px value of your $switch-to-mobile
 
+$(window).on('resize', function () {
+  if ($(window).width() > mobileBreakpoint) {
+    $('html').removeClass('nav-active');
+    $('.nav-icon-open-wrapper').removeClass('toggle'); // Also reset the hamburger animation
+  }
+});
 
 //dropdown
  $('.portfolio-dropdown').on('click', function(){
@@ -72,3 +79,28 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+//Page transitions
+barba.init({
+  transitions: [{
+    name: 'horizontal-slide-fade',
+    leave(data) {
+      // Slide current page to the left and fade out
+      return gsap.to(data.current.container, {
+        opacity: 0,
+        x: '-100%', // Slide to the left
+        duration: 0.6,
+        ease: "power2.inOut"
+      });
+    },
+    enter(data) {
+      // Slide new page from the right and fade in
+      return gsap.from(data.next.container, {
+        opacity: 0,
+        x: '100%', // Slide in from the right
+        duration: 0.6,
+        ease: "power2.out"
+      });
+    }
+  }]
+});

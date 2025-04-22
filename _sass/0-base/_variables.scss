@@ -1,0 +1,49 @@
+// Color variables
+$white: #FFFFFF;
+$black: #000000;
+$slategrey: #6B818C;
+
+// Theme
+$bg-color: #8d1f1f;
+$nav-color: #F1F2EE;
+$banner-color: #FEB95F;
+$container-color: $nav-color;
+$container-open-color: #EB5E55;
+
+$text-color: #ffffff;
+
+// NAV BAR
+$nav-width: 470px;
+$nav-width-tab: 30%;
+$switch-to-mobile: 850px;
+$switch-to-tablet: 1200px;
+$nav-mobile-height: 100px;
+
+$nav-color: #ffffff;
+$text-color: #ffffff;
+$nav-text-color: #000000;
+$container-color: #ffffff;
+
+// Define defaults for each variable.
+
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     30px;
+
+$brand-color:      #2a7ae2 !default;
+
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    800px !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
