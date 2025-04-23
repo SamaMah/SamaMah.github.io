@@ -2,45 +2,68 @@
   .wrapper {
     background-color: #111;
     border-radius: 20px;
-    max-width: 500px;
-    margin-left: $nav-width;
+    max-width: 800px;
+    margin-left: 40px;
     padding: 40px 20px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start; // Align items to the left
-    text-align: left;        // Text also aligned left
-  }
-  // Site Logo (small and centered)
-  .footer-logo {
-    img {
-      width: 80px; // Small logo size (adjust as needed)
-      height: auto;
+    align-items: flex-start;
+    text-align: left;
+
+    @include media-query($on-laptop) {
+      margin-left: 20px;
+      max-width: 90%;
+    }
+
+    @include media-query($on-palm) {
+      margin: 20px auto;
+      max-width: 95%;
+      align-items: center;
+      text-align: center;
     }
   }
 
-  // "3D art and design" text
+  .footer-logo img {
+    width: 80px;
+    height: auto;
+
+    @include media-query($on-laptop) {
+      width: 60px;
+    }
+
+    @include media-query($on-palm) {
+      width: 50px;
+    }
+  }
+
   .footer-text {
     font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
-    margin-top: 15px;
-    margin-bottom: 25px;
+    margin: 15px 0 25px;
+
+    @include media-query($on-laptop) {
+      font-size: 1.3rem;
+    }
+
+    @include media-query($on-palm) {
+      font-size: 1.1rem;
+    }
   }
 
-  // Social Media Icons
   .footer-socials {
     display: flex;
     justify-content: center;
-    gap: 20px; // Space between social icons
+    gap: 20px;
 
     .social-media-list {
       list-style: none;
       margin-left: 0;
       padding: 0;
       display: flex;
-      gap: 15px; // Space between each icon
+      gap: 15px;
 
       li {
         display: inline-block;
@@ -51,35 +74,10 @@
           transition: color 0.3s;
 
           &:hover {
-            color: #007acc; // Hover color to match the theme
+            color: #007acc;
           }
         }
       }
-    }
-  }
-
-  // Media Queries for responsive behavior
-  @include media-query($on-laptop) {
-    .footer-logo {
-      img {
-        width: 60px; // Smaller logo for laptop screens
-      }
-    }
-
-    .footer-text {
-      font-size: 1.3rem;
-    }
-  }
-
-  @include media-query($on-palm) {
-    .footer-logo {
-      img {
-        width: 50px; // Smaller logo for mobile screens
-      }
-    }
-
-    .footer-text {
-      font-size: 1.1rem;
     }
   }
 }
