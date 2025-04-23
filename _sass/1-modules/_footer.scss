@@ -1,68 +1,85 @@
-/**
- * Site footer
- */
- .site-footer {
-    border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
+.site-footer {
+  .wrapper {
+    background-color: #111;
+    border-radius: 20px;
+    max-width: 500px;
+    margin-left: $nav-width;
+    padding: 40px 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; // Align items to the left
+    text-align: left;        // Text also aligned left
   }
-  
-  .footer-heading {
-    @include relative-font-size(1.125);
-    margin-bottom: $spacing-unit / 2;
+  // Site Logo (small and centered)
+  .footer-logo {
+    img {
+      width: 80px; // Small logo size (adjust as needed)
+      height: auto;
+    }
   }
-  
-  .contact-list,
-  .social-media-list {
-    list-style: none;
-    margin-left: 0;
+
+  // "3D art and design" text
+  .footer-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 25px;
   }
-  
-  .footer-col-wrapper {
-    @include relative-font-size(0.9375);
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
+
+  // Social Media Icons
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px; // Space between social icons
+
+    .social-media-list {
+      list-style: none;
+      margin-left: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px; // Space between each icon
+
+      li {
+        display: inline-block;
+
+        a {
+          font-size: 1.5rem;
+          color: #ffffff;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #007acc; // Hover color to match the theme
+          }
+        }
+      }
+    }
   }
-  
-  .footer-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-  }
-  
-  .footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-  }
-  
-  .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-  }
-  
-  .footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
-  }
-  
+
+  // Media Queries for responsive behavior
   @include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-      width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-      width:         calc(50% - (#{$spacing-unit} / 2));
+    .footer-logo {
+      img {
+        width: 60px; // Smaller logo for laptop screens
+      }
     }
-  
-    .footer-col-3 {
-      width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-      width:         calc(100% - (#{$spacing-unit} / 2));
+
+    .footer-text {
+      font-size: 1.3rem;
     }
   }
-  
+
   @include media-query($on-palm) {
-    .footer-col {
-      float: none;
-      width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-      width:         calc(100% - (#{$spacing-unit} / 2));
+    .footer-logo {
+      img {
+        width: 50px; // Smaller logo for mobile screens
+      }
+    }
+
+    .footer-text {
+      font-size: 1.1rem;
     }
   }
-  
+}

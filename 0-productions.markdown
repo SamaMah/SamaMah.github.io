@@ -5,15 +5,18 @@ permalink: /productions/
 order: 1
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+<section class="productions-section">
+  <div class="productions-grid">
+    {% for production in site.data.productions %}
+      <div class="production-card">
+        <img src="{{ production.image }}" alt="{{ production.title }} poster" class="production-poster">
+        <div class="production-info">
+          <h2>{{ production.title }}</h2>
+          <p><strong>Role:</strong> {{ production.role }}</p>
+          <p><strong>Type:</strong> {{ production.type }}</p>
+          <p><strong>Year:</strong> {{ production.year }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
