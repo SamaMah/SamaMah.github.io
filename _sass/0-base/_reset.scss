@@ -1,3 +1,11 @@
+/* Prevent overflow */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* This prevents horizontal scrolling */
+  margin: 0;
+  padding: 0;
+}
+
 /**
  * Reset some basic elements
  */
