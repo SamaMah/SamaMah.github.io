@@ -1,19 +1,16 @@
 ---
 layout: page
 title: Street Art
-permalink: /street-art/
+permalink: /streetart/
 order: 3
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+<div class="streetart-gallery">
+  {% for piece in site.data.streetart %}
+    <div class="gallery-item">
+      <img src="{{ piece.image | relative_url }}" alt="{{ piece.title }}">
+      <h3>{{ piece.title }}</h3>
+      <p>{{ piece.description }}</p>
+    </div>
+  {% endfor %}
+</div>

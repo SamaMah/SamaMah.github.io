@@ -4,12 +4,22 @@
     @media screen and (max-width: $device) {
       @content;
     }
-  }
+}
   
-  @mixin relative-font-size($ratio) {
+@mixin relative-font-size($ratio) {
     font-size: $base-font-size * $ratio;
-  }
+}
   
+a,
+a *,
+button,
+input,
+textarea,
+img, .nav-icon-open-wrapper {
+  -webkit-tap-highlight-color: transparent;
+}
+
 
 @import "0-base/0-base";
 @import "1-modules/1-modules";
+@import "2-layouts/2-layouts";

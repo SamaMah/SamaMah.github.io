@@ -5,7 +5,10 @@ permalink: /productions/
 order: 1
 ---
 
+{% include showreel.html id="123456789" %}
+
 <section class="productions-section">
+
   <div class="productions-grid">
     {% for production in site.data.productions %}
       <div class="production-card">
