@@ -8,11 +8,11 @@
   
     <div id="barba-container" class="page-inner">
       <main class="page-content" aria-label="Content" data-barba="container" data-barba-namespace="{{ page.layout }}">
-        <div class="page-flex">
-          <div class="wrapper">
-            {{ content }}
-            {%- include footer.html -%}
-          </div>
+        <div class="content-wrapper">
+          {{ content }}
+        </div>
+        <div class="footer-wrapper">
+          {%- include footer.html -%}
         </div>
       </main>
     </div>

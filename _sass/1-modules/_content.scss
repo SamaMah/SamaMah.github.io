@@ -5,75 +5,38 @@
   min-height: 100vh;
 }
 
-.page-inner {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
 // Page Content
 .page-content {
   z-index: 2;
   padding: $spacing-unit 0 0 0;
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.wrapper {
-  margin-left: $nav-width;
-  flex-grow: 1;
+.content-wrapper {
+  flex: 1;
 }
+.footer-wrapper{
+  padding: 1rem;
+}
+.content-wrapper, .footer-wrapper {
+  margin-left: $nav-width;
+}
+
 
 // Responsive Layout
 @media screen and (max-width: $switch-to-tablet) {
-  .wrapper {
+  .content-wrapper, .footer-wrapper  {
     margin-left: $nav-width-tab;
   }
 }
 
 @media screen and (max-width: $switch-to-mobile), screen and (max-height: 425px) {
-  .wrapper {
+  .content-wrapper, .footer-wrapper  {
     margin-left: 0;
   }
-
   .page-content {
     padding: ($nav-mobile-height + $spacing-unit) 0;
-  }
-}
-
-// Street Art Gallery
-.streetart-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  padding: 40px;
-  margin: auto;
-  max-width: 100%;
-
-  .gallery-item {
-    background: #1e1e1e;
-    border-radius: 16px;
-    overflow: hidden;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      color: #fff;
-    }
-
-    p {
-      color: #ccc;
-      font-size: 1rem;
-    }
   }
 }
 

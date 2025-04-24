@@ -261,3 +261,13 @@ html, body {
    }
  }
  
+
+ a,
+ a *,
+ button,
+ input,
+ textarea,
+ img, .nav-icon-open-wrapper {
+   -webkit-tap-highlight-color: transparent;
+ }
+ 
