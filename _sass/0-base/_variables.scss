@@ -1,16 +1,12 @@
 // Color variables
-$white: #FFFFFF;
-$black: #000000;
-$slategrey: #6B818C;
+$white: #FDFFFC;
+$black: #020100;
+$bg-color: #7C878A;
+$secondary-color: #FFE49B;
 
-// Theme
-$bg-color: #000000;
-$nav-color: #F1F2EE;
-$banner-color: #ce7e16;
-$container-color: $nav-color;
-$container-open-color: #EB5E55;
-$nav-text-color: #000000;
-$text-color: #ffffff;
+$nav-color: $black;
+$nav-text-color: $white;
+$text-color: $black;
 
 // NAV BAR
 $nav-width: 470px;
@@ -28,8 +24,7 @@ $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 
 $spacing-unit: 20px;
-
-$brand-color:      #2a7ae2 !default;
+$rounded-corner: 8px;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;

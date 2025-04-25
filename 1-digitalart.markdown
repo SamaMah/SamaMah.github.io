@@ -7,5 +7,5 @@ projects_data: "projects"
 order: 2
 ---
 
-{% include project-section.html %}
+{% include portfolio.html %}
 

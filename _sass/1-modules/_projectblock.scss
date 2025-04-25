@@ -6,7 +6,7 @@
   
     .project-block {
       background-color: #1e1e1e;
-      border-radius: 16px;
+      border-radius: $rounded-corner;
       overflow: hidden;
       box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease;
@@ -34,7 +34,7 @@
           height: 200px;
           background-size: cover;
           background-position: center;
-          border-radius: 8px;
+          border-radius: $rounded-corner;
         }
   
         .project-title {

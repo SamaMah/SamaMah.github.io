@@ -4,11 +4,13 @@ layout: default
 
 <section class="intro-banner">
   <div class="intro-container">
-    <img src="/assets/banner.png" alt="Banner Image" class="intro-image">
-
+    <div class="intro-image-container">
+      <img src="/assets/banner.png" alt="Banner Image" class="intro-image">
+    </div>
     <p class="intro-skills">Digital Art <span class="divider">|</span> Design <span class="divider">|</span> Illustration</p>
   </div>
 </section>
+
 
 <section class="thumb-grid">
 {%- assign default_paths = site.pages | map: "path" -%}

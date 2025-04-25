@@ -48,7 +48,7 @@
   width: 100%; // Ensure it scales down to fit the container
   max-width: 1200px; // This can still be used to limit on large screens
   margin: 60px auto;
-  border-radius: 16px;
+  border-radius: $rounded-corner;
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
 
   iframe {

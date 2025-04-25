@@ -59,7 +59,7 @@
     height: 4px;
     width: 27px;
     margin: 5px 0;
-    background-color: $black;
+    background-color: $nav-text-color;
     transition: all 0.3s ease;
   }
 }
@@ -106,7 +106,7 @@
   left: 0;
   width: 50vw;
   height: 100vh;
-  background-color: $container-color;
+  background-color: $nav-color;
   transform: translateX(-100%);
   z-index: 95;
   transition: transform 0.3s ease;

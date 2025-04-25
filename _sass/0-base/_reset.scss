@@ -16,8 +16,6 @@ html, body {
    padding: 0;
  }
  
- 
- 
  /**
   * Basic styling
   */
@@ -105,34 +103,6 @@ html, body {
    font-weight: $base-font-weight;
  }
  
- 
- 
- /**
-  * Links
-  */
- a {
-   color: $brand-color;
-   text-decoration: none;
- 
-   &:visited {
-     color: darken($brand-color, 15%);
-   }
- 
-   &:hover {
-     color: $text-color;
-     text-decoration: underline;
-   }
- 
-   .social-media-list &:hover {
-     text-decoration: none;
- 
-     .username {
-       text-decoration: underline;
-     }
-   }
- }
- 
- 
  /**
   * Blockquotes
   */
@@ -158,7 +128,7 @@ html, body {
  code {
    @include relative-font-size(0.9375);
    border: 1px solid $grey-color-light;
-   border-radius: 3px;
+   border-radius: $rounded-corner;
    background-color: #eef;
  }
  

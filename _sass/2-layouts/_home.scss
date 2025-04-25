@@ -1,43 +1,83 @@
 .intro-banner {
-    background-color: #0044cc; // or any blue you prefer
-    padding: 3rem 1rem;
-    margin: 0 $spacing-unit;
-    text-align: center;
+  background-color: #fdfdfc;
+  padding: 3rem 1rem;
+  margin: 0 $spacing-unit;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: $text-color;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  background-image: 
+  linear-gradient(
+    to right,
+    #ff3b3b 0px,
+    #ff3b3b 4px,
+    transparent 4px
+  ),
+  repeating-linear-gradient(
+    to bottom,
+    #5ba8ff 0px,
+    #5ba8ff 2px,
+    transparent 2px,
+    transparent 30px
+  );
+
+  background-size: 100% 100%, 100% 30px;
+  background-repeat: no-repeat, repeat;
+  background-position: 50px 0, 0 50px;
+
+
+  .intro-container {
+    max-width: 800px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    color: #fff; // ensures text is visible on blue
-    border-radius: 8px;
-  
-    .intro-container {
-      max-width: 800px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .intro-image {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-    }
-  
-    .intro-skills {
-      font-size: 1.2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-  
-      .divider {
-        color: #aad;
-        margin: 0 0.5rem;
-      }
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 1rem 0 3rem; // 40px top to align with first blue line, 3rem left to stay inside red line
+  }
+
+  .intro-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: $rounded-corner;
+    margin: 0 auto 1.5rem;
+  }
+
+  .intro-skills {
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    line-height: 30px; // matches spacing of the blue lines
+
+    .divider {
+      color: #aad;
+      margin: 0 0.5rem;
     }
   }
-  
+
+  @media (max-width: 600px) {
+    .intro-container {
+      align-items: center;
+      padding: 40px 1.5rem 0 1.5rem;
+    }
+
+    .intro-skills {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
+
+
+// Portfolio thumbnails
+
   .thumb-grid {
     padding: 2rem;
     .thumb-container {
@@ -52,9 +92,8 @@
       flex-direction: column;
       align-items: center;
       text-decoration: none;
-      color: #fff;
-      background: #222;
-      border-radius: 8px;
+      color: $text-color;
+      border-radius: $rounded-corner;
       overflow: hidden;
       transition: transform 0.2s ease;
       
@@ -72,7 +111,7 @@
         padding: 0.75rem;
         font-size: 1rem;
         text-align: center;
-        background: #000;
+        background: $white;
         width: 100%;
       }
     }
