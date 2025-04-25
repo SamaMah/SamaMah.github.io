@@ -20,6 +20,11 @@ barba.init({
       });
     },
 
+    beforeEnter() {
+      // Ensure you start at the top of the page before entering a new one
+      window.scrollTo(0, 0);
+    },
+
     enter(data) {
       const container = data.next.container;
       gsap.set(container, {
