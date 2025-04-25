@@ -3,9 +3,7 @@
     {% for project in site.data[page.projects_data] %}
       <div class="project-block">
         <div class="project-header" onclick="toggleProject(this)">
-          <div class="project-image"
-               style="background-image: url('{{ project.images[0] }}');">
-          </div>
+          <img class="project-image" src="{{ project.banner }}" alt="{{ project.title }}">
           <h2 class="project-title">{{ project.title }}</h2>
         </div>
         <div class="project-details">
