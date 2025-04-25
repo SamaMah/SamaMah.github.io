@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: default
 title: Productions
 permalink: /productions/
+thumbnail: /assets/img/thumbnails/ninja_express_001.png
 order: 1
 ---
 

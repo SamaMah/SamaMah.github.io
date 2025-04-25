@@ -2,25 +2,27 @@
 layout: default
 ---
 
-<div class="intro-block">
-  <img src="/assets/img/Sama_Logo.png" alt="Portrait of the artist" class="intro-image" />
+<section class="intro-banner">
+  <div class="intro-container">
+    <img src="/assets/banner.png" alt="Banner Image" class="intro-image">
 
-  <div class="intro-content">
-    <p>Hello! I’m an artist focused on creating visually engaging work across 2D, 3D, and digital design. I’m passionate about blending traditional art with modern tools to bring concepts to life - from initial sketch to final render.</p>
-
-    <h2>What I Do</h2>
-    <ul>
-      <li>Concept Art & Illustration</li>
-      <li>3D Modeling & Texturing</li>
-      <li>Compositing & Motion Graphics</li>
-      <li>Visual Development & Storyboarding</li>
-    </ul>
-
-    <h2>Software I Use</h2>
-    <ul>
-      <li>Blender, ZBrush, Substance Painter</li>
-      <li>Photoshop, Illustrator, Procreate</li>
-      <li>Adobe After Effects</li>
-    </ul>
+    <p class="intro-skills">Digital Art <span class="divider">|</span> Design <span class="divider">|</span> Illustration</p>
   </div>
-</div>
+</section>
+
+<section class="thumb-grid">
+{%- assign default_paths = site.pages | map: "path" -%}
+{%- assign page_paths = site.header_pages | default: default_paths -%}
+{%- assign my_pages = site.pages | where_exp: "page", "page_paths contains page.path" -%}
+{%- assign sorted_pages = my_pages | sort: "order" -%}
+  <div class="thumb-container">
+    {%- for my_page in sorted_pages -%}
+      {%- if my_page.thumbnail and my_page.title -%}
+        <a href="{{ my_page.url | relative_url }}" class="thumb-card">
+          <img src="{{ my_page.thumbnail | relative_url }}" alt="{{ my_page.title | escape }}">
+          <div class="thumb-title">{{ my_page.title }}</div>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
