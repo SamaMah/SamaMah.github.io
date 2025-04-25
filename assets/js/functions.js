@@ -80,3 +80,9 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
+
+// Toggle open/closed for each project block
+function toggleProject(block) {
+  const projectBlock = block.closest('.project-block');
+  projectBlock.classList.toggle('open');
+}

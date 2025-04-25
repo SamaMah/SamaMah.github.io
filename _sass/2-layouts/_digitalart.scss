@@ -1,0 +1,95 @@
+.projects-section {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    color: #fff;
+  
+    .project-block {
+      background-color: #1e1e1e;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+      margin-bottom: 40px;
+  
+      &.open {
+        .project-details {
+          max-height: 1000px; // Allow the project details to expand
+          padding: 20px; // Adjust padding if needed
+          opacity: 1;
+          transition: max-height 0.5s ease, opacity 0.3s ease;
+        }
+      }
+  
+      .project-header {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        .project-image {
+          width: 100%;
+          height: 200px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 8px;
+        }
+  
+        .project-title {
+          font-size: 1.8rem;
+          margin-top: 10px;
+          text-align: center;
+        }
+      }
+  
+      .project-details {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.3s ease;
+        background-color: #333;
+        padding: 0 20px;
+      }
+  
+      .project-info {
+        p {
+          margin: 6px 0;
+          font-size: 1rem;
+          color: #ccc;
+        }
+      }
+  
+      .project-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 20px;
+  
+        .gallery-image {
+          width: 100%;
+          height: 250px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  
+  @media (min-width: 700px) {
+    .projects-section {
+      .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .projects-section {
+      .project-gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+  
