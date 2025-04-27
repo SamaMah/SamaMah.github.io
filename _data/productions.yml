@@ -1,23 +1,30 @@
-- title: "Dry Sea"
-  role: "Concept Artist"
-  type: "Animation"
-  year: 2022
-  image: "/assets/img/productions/InterstellarElla_Poster.jpg"
+- title: "Sir Mouse S02"
+  role: "Concept Artist & Compositing Artist"
+  type: "Tv Production"
+  year: 2024
+  image: "https://cdnb.artstation.com/p/productions/covers/000/205/237/thumb/Screenshot_2025-02-25_221457.png?1740518119"
 
-- title: "Ninja Express"
-  role: "3D Artist"
-  type: "Short Film"
-  year: 2023
-  image: "/assets/img/productions/InterstellarElla_Poster.jpg"
-
-- title: "Sir Mouse"
-  role: "Concept Artist"
-  type: "Animation"
-  year: 2022
-  image: "/assets/img/productions/InterstellarElla_Poster.jpg"
+- title: "Dickie S02"
+  role: "Designer"
+  type: "Tv Production"
+  year: 2024
+  image: "https://cdna.artstation.com/p/productions/covers/000/205/236/thumb/dickie_.png?1740517881"
 
 - title: "Interstellar Ella"
-  role: "3D Artist"
+  role: "Compositing Artist"
+  type: "Tv Production"
+  year: 2022
+  image: "https://cdnb.artstation.com/p/productions/covers/000/202/281/thumb/MV5BMjUyOTMyZTEtYzgwZS00YTM0LThmODYtNDgzYWI0NzNkMDY3XkEyXkFqcGc_._V1_FMjpg_UY2926_.png?1736899404"
+
+
+- title: "Ninja Express"
+  role: "Compositing Artist"
+  type: "TV Production"
+  year: 2021
+  image: "https://cdnb.artstation.com/p/productions/covers/000/130/461/thumb/MV5BZDYzZDE1YzAtMzcwMy00MGM2LTgzZTAtYWNhOTgxYmM0MjUwXkEyXkFqcGdeQXVyODQ0MTM0NDU_._V1_.png?1644620271"
+
+- title: "Dry Sea"
+  role: "Generalist"
   type: "Short Film"
-  year: 2023
-  image: "/assets/img/productions/InterstellarElla_Poster.jpg"
+  year: 2020
+  image: "https://cdna.artstation.com/p/productions/covers/000/202/280/thumb/MV5BN2E5MWM1OWYtMDM5ZS00YjdhLTk0YjgtNTJkYzczMGY3ZTRlXkEyXkFqcGc_._V1_FMjpg_UX1240_.png?1736899308"

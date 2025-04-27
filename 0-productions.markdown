@@ -20,7 +20,7 @@ order: 1
 
 <section class="productions-section">
 
-  <div class="productions-grid">
+  <div class="prod-container">
     {% for production in site.data.productions %}
       <div class="production-card">
         <img src="{{ production.image }}" alt="{{ production.title }} poster" class="production-poster">
