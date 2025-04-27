@@ -4,7 +4,9 @@
   {%- include head.html -%}
 
   <body data-barba="wrapper" class="page-wrapper">
-    {%- include nav.html -%}
+    <div id="nav-wrapper">
+      {%- include nav.html -%}
+    </div>
   
     <div id="barba-container" class="page-inner">
       <main class="page-content" aria-label="Content" data-barba="container" data-barba-namespace="{{ page.layout }}">

@@ -1,8 +1,8 @@
 .intro-banner {
   background-color: #fdfdfc;
-  margin: 0 $spacing-unit;
   border-radius: 2px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
 
   background-image: 
   linear-gradient(
@@ -74,7 +74,6 @@
 // Portfolio thumbnails
 
   .thumb-grid {
-    padding: 2rem;
     .thumb-container {
       display: grid;
       gap: 1.5rem;

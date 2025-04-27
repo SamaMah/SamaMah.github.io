@@ -31,6 +31,7 @@
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     svg {
       color: white;
@@ -144,7 +145,6 @@
   .nav-header {
     display: flex;
     align-items: center; // vertically center children
-    justify-content: space-between; // logo + nav icon if needed
     padding: 0;
     height: $nav-mobile-height;
     width: 100%;
