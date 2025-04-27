@@ -1,7 +1,9 @@
 <footer class="site-footer">
     <!-- Site Logo (small and centered) -->
     <div class="footer-logo">
-      <img src="{{ site.logo_url | relative_url }}" alt="{{ site.title | escape }} logo">
+      <a href="{{ site.baseurl }}/" aria-label="Homepage">
+      {% include logo.html %}
+      </a>
     </div>
 
     <!-- "3D art and design" text centered below logo -->
