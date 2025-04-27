@@ -77,9 +77,21 @@
     padding: 2rem;
     .thumb-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 1.5rem;
       justify-content: center;
+  
+      // Default to 4 columns on desktop (large screens)
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  
+      // 2 columns for tablets
+      @media (max-width: $switch-to-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+  
+      // 1 column for mobile
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
     }
   
     .thumb-card {
