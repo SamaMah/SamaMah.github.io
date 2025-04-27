@@ -5,7 +5,7 @@ layout: default
 <section class="intro-banner">
   <div class="intro-container">
     <div class="intro-image-container">
-      <img src="/assets/banner.png" alt="Banner Image" class="intro-image">
+      <img src="{{ site.logo_url | relative_url }}" alt="Banner Image" class="intro-image">
     </div>
     <p class="intro-skills">Digital Art <span class="divider">|</span> Design <span class="divider">|</span> Illustration</p>
   </div>
