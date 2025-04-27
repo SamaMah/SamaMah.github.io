@@ -26,25 +26,16 @@
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+}
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  .nav-logo {
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    svg {
-      color: white;
-      width: 100px;
-      height: auto;
-    }
-  }
-
-  .nav-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  svg {
+    color: white;
+    width: 100px;
+    height: auto;
   }
 }
 
@@ -143,16 +134,11 @@
 // RESPONSIVE BEHAVIOR (Mobile View)
 @media screen and (max-width: $switch-to-mobile), screen and (max-height: 425px) {
   .nav-header {
+    width: 100vw;
     display: flex;
-    align-items: center; // vertically center children
-    padding: 0;
+    align-items: center;
+    padding-top: 0;
     height: $nav-mobile-height;
-    width: 100%;
-
-    .nav-bar {
-      flex-direction: row;
-      width: 100%;
-    }
   }
 
   .nav-icon-open-wrapper {

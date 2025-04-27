@@ -1,18 +1,16 @@
 <!-- Fixed vertical sidebar -->
 <header class="nav-header" role="banner">
-  <!-- Logo at the top -->
-  <div class="nav-logo">
-    <a href="{{ site.baseurl }}/" aria-label="Homepage">
-      {% include logo.html %}
-    </a>
-  </div>
-
   <!-- Desktop and Mobile Nav Toggle -->
   {%- assign default_paths = site.pages | map: "path" -%}
   {%- assign page_paths = site.header_pages | default: default_paths -%}
   {%- if page_paths -%}
     <nav class="nav-bar" role="navigation" aria-label="Main navigation">
-      
+        <!-- Logo at the top -->
+      <div class="nav-logo">
+        <a href="{{ site.baseurl }}/" aria-label="Homepage">
+          {% include logo.html %}
+        </a>
+      </div>
       <!-- Hamburger Icon (mobile only) -->
       <div class="nav-icon-open-wrapper">
         <div class="line1"></div>
