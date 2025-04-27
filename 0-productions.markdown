@@ -6,9 +6,17 @@ thumbnail: /assets/img/thumbnails/ninja_express_001.png
 order: 1
 ---
 
-Showreel
-
-{% include showreel.html id="123456789" %}
+<section class="showreel-section">
+<div class="custom-video">
+  <iframe 
+    id="vimeo-video" 
+    src="https://player.vimeo.com/video/1074265087?h=755017a237&title=0&byline=0&portrait=0&controls=1"
+    frameborder="0" 
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+</section>
 
 <section class="productions-section">
 
