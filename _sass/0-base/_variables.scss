@@ -13,7 +13,7 @@ $nav-width: 470px;
 $nav-width-tab: 30%;
 $switch-to-mobile: 850px;
 $switch-to-tablet: 1200px;
-$nav-mobile-height: 100px;
+$nav-mobile-height: 70px;
 
 // Define defaults for each variable.
 
@@ -37,3 +37,6 @@ $content-width:    800px !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
+
+
+$shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);

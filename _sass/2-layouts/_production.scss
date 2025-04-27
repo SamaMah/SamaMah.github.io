@@ -7,18 +7,8 @@
 
   .productions-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(5, 1fr);
     gap: 60px;
-
-    @media (min-width: 700px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 50px;
-    }
-
-    @media (min-width: 1200px) {
-      grid-template-columns: repeat(3, 1fr); // Switch to 3 columns on desktop
-      gap: 40px; // Smaller gap for a cleaner layout
-    }
   }
 
   .production-card {
@@ -38,7 +28,7 @@
       width: 100%;
       height: auto;
       display: block;
-      max-height: 400px; // Limit the max height of posters
+      max-height: 200px; // Limit the max height of posters
       object-fit: cover;
     }
 

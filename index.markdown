@@ -20,7 +20,9 @@ layout: default
     {%- for my_page in sorted_pages -%}
       {%- if my_page.thumbnail and my_page.title -%}
         <a href="{{ my_page.url | relative_url }}" class="thumb-card">
-          <img src="{{ my_page.thumbnail | relative_url }}" alt="{{ my_page.title | escape }}">
+          <div class="thumb-img">
+            <img src="{{ my_page.thumbnail | relative_url }}" alt="{{ my_page.title | escape }}">
+          </div>
           <div class="thumb-title">{{ my_page.title }}</div>
         </a>
       {%- endif -%}
