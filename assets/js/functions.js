@@ -76,3 +76,111 @@ function toggleProject(block) {
   const projectBlock = block.closest('.project-block');
   projectBlock.classList.toggle('open');
 }
+
+//Modal
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('modal');
+  const modalContent = document.getElementById('modal-content');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  galleryItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      const url = item.getAttribute('data-url');
+      const type = item.getAttribute('data-type');
+
+      let contentElement;
+
+      if (type === "image") {
+        contentElement = document.createElement('img');
+        contentElement.src = url;
+        contentElement.alt = "";
+      } else if (type === "video") {
+        contentElement = document.createElement('video');
+        contentElement.src = url;
+        contentElement.autoplay = true;
+        contentElement.muted = true;
+        contentElement.playsInline = true;
+        contentElement.controls = true;
+        contentElement.loop = true;
+      }
+
+      modalContent.innerHTML = '';
+      if (contentElement) {
+        modalContent.appendChild(contentElement);
+      }
+
+      modal.style.display = "flex";
+
+      // Desktop Zoom (Mouse Wheel)
+      if (contentElement.tagName === "IMG") {
+        let scale = 1;
+
+        // Mouse wheel zoom
+        contentElement.addEventListener('wheel', function(e) {
+          e.preventDefault();
+          const zoomFactor = e.ctrlKey ? 0.05 : 0.1;  // More precise zoom if holding Ctrl
+          if (e.deltaY < 0) {
+            scale += zoomFactor; // Zoom in
+          } else {
+            scale -= zoomFactor; // Zoom out
+          }
+
+          // Limit the zoom level
+          scale = Math.min(Math.max(scale, 1), 3);
+          contentElement.style.transform = `scale(${scale})`;
+        });
+
+        // Mobile Zoom (Pinch to Zoom)
+        let initialDistance = null;
+
+        contentElement.addEventListener('touchstart', function(e) {
+          if (e.touches.length === 2) {
+            // Start of pinch gesture (two fingers)
+            initialDistance = getDistance(e.touches[0], e.touches[1]);
+          }
+        });
+
+        contentElement.addEventListener('touchmove', function(e) {
+          if (e.touches.length === 2 && initialDistance !== null) {
+            e.preventDefault();
+            let currentDistance = getDistance(e.touches[0], e.touches[1]);
+            let zoomFactor = (currentDistance - initialDistance) * 0.005;
+            scale += zoomFactor;
+            scale = Math.min(Math.max(scale, 1), 3);
+            contentElement.style.transform = `scale(${scale})`;
+            initialDistance = currentDistance;
+          }
+        });
+
+        contentElement.addEventListener('touchend', function(e) {
+          if (e.touches.length < 2) {
+            initialDistance = null; // Reset when pinch ends
+          }
+        });
+
+        // Helper function to calculate distance between two touch points
+        function getDistance(touch1, touch2) {
+          const dx = touch2.pageX - touch1.pageX;
+          const dy = touch2.pageY - touch1.pageY;
+          return Math.sqrt(dx * dx + dy * dy);
+        }
+      }
+    });
+  });
+
+  // Close modal when clicking outside the content
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) { // Only if click is on the background
+      modal.style.display = "none";
+      modalContent.innerHTML = '';
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === "Escape" && modal.style.display === "flex") {
+      modal.style.display = "none";
+      modalContent.innerHTML = '';
+    }
+  });
+});

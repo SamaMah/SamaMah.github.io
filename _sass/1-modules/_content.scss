@@ -33,8 +33,11 @@
 }
 
 @media screen and (max-width: $switch-to-mobile), screen and (max-height: 425px) {
-  .content-wrapper, .footer-wrapper  {
+  .content-wrapper {
     padding: 0 5px;
+    padding-bottom: $spacing-unit;
+  }
+  .content-wrapper, .footer-wrapper  {
     margin-left: 0;
   }
   .page-content {

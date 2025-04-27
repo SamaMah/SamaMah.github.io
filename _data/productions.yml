@@ -10,12 +10,17 @@
   year: 2024
   image: "https://cdna.artstation.com/p/productions/covers/000/205/236/thumb/dickie_.png?1740517881"
 
+- title: "Eureka!"
+  role: "Designer"
+  type: "Short Film"
+  year: 2024
+  image: "/assets/img/thumbnails/Eureka_Poster_EN.jpg"
+
 - title: "Interstellar Ella"
   role: "Compositing Artist"
   type: "Tv Production"
   year: 2022
   image: "https://cdnb.artstation.com/p/productions/covers/000/202/281/thumb/MV5BMjUyOTMyZTEtYzgwZS00YTM0LThmODYtNDgzYWI0NzNkMDY3XkEyXkFqcGc_._V1_FMjpg_UY2926_.png?1736899404"
-
 
 - title: "Ninja Express"
   role: "Compositing Artist"
