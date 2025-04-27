@@ -7,7 +7,6 @@ layout: default
     <div class="intro-image-container">
       <img src="{{ site.logo_url | relative_url }}" alt="Banner Image" class="intro-image">
     </div>
-    <p class="intro-skills">Digital Art <span class="divider">|</span> Design <span class="divider">|</span> Illustration</p>
   </div>
 </section>
 

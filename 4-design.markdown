@@ -7,4 +7,3 @@ projects_data: "projects-02"
 order: 4
 ---
 
-{% include project-section.html %}
