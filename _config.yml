@@ -28,7 +28,7 @@ github_username:  SamaMah
 instagram_username: sama.skt
 
 logo_url: "/assets/img/sama.svg"
-banner-img: "/assets/img/standin.jpg"
+banner-img: "/assets/img/profile-image.png"
 # Build settings
 theme: minima
 plugins:
