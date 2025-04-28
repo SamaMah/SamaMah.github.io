@@ -7,3 +7,14 @@
   url: "https://cdn.artstation.com/p/video_sources/002/380/745/sequence-01.mp4"
   title: "Fishbot Turntable"
   description: null
+
+- type: image
+  url: https://cdna.artstation.com/p/assets/images/images/043/997/254/large/oussama-m-misty-post-final.jpg?1638828021
+  title: "Misty"
+  description: null
+
+
+- type: image
+  url: https://cdnb.artstation.com/p/assets/images/images/021/536/405/large/oussama-m-final-version001.jpg?1572048618
+  title: "Countess of Robotville"
+  description: null
