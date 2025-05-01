@@ -37,6 +37,10 @@ sass:
   sass_dir: _sass
   style: compressed
 
+collections:
+  projects:
+    output: true
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -4,7 +4,7 @@ title: 3D Art
 permalink: /3d-art/
 thumbnail: /assets/img/thumbnails/digitalart_01.jpg
 projects_data: "projects"
-order: 2
+order: 5
 ---
 
 <section class="gallery">
@@ -22,8 +22,3 @@ order: 2
     </div>
   {% endfor %}
 </section>
-
-<!-- Modal -->
-<div class="modal" id="modal">
-  <div class="modal-content" id="modal-content"></div>
-</div>
