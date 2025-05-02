@@ -1,6 +1,6 @@
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 240px));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 400px));
   gap: 20px;
   padding: 20px;
   justify-content: center; /* center the grid if there's extra space */
