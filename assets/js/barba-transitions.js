@@ -2,55 +2,74 @@ barba.init({
   transitions: [{
     name: 'horizontal-slide-fade',
 
-    // 1) Leave async: wait for the old page to slide+fade out
-    async leave({ current }) {
-      await gsap.to(current.container, {
+    leave(data) {
+      const container = data.current.container;
+      gsap.set(container, {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        zIndex: 1
+      });
+
+      return gsap.to(container, {
+        opacity: 0,
         x: '-100%',
-        autoAlpha: 0,
         duration: 0.6,
         ease: 'power2.inOut'
       });
     },
 
-    // 2) beforeEnter: set up the new page off-screen & hidden
-    beforeEnter({ next }) {
+    beforeEnter() {
+      // Ensure you start at the top of the page before entering a new one
       window.scrollTo(0, 0);
-      gsap.set(next.container, {
-        position: 'absolute',
-        top: 0, left: 0,
-        width: '100%',
-        x: '100%',
-        autoAlpha: 0
-      });
     },
 
-    // 3) Enter async: only now slide+fade the new page in
-    async enter({ next }) {
-      // kick off the slide-in tween and await its completion
-      await gsap.to(next.container, {
-        x: '0%',
-        autoAlpha: 1,
-        duration: 0.6,
-        ease: 'power2.out'
+    enter(data) {
+      const container = data.next.container;
+      gsap.set(container, {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        zIndex: 0
       });
 
-      // clear inline props so your styles/layout return to normal
-      gsap.set(next.container, { clearProps: 'all' });
+      // Run your slide-in tween
+      return gsap.from(container, {
+        opacity: 0,
+        x: '100%',
+        duration: 0.6,
+        ease: 'power2.out',
+        onComplete: () => {
+          // 1) Clear GSAP props so the page returns to normal flow
+          gsap.set(container, { clearProps: 'all' });
 
-      // now that it's in place, do non-blocking chores:
-      next.container.querySelectorAll('video').forEach(v => v.play());
-      initProjectModal();
+          // 2) Autoplay any <video> elements in the new container
+          container.querySelectorAll('video').forEach(v => {
+            // some browsers require muted to autoplay
+            v.muted = true;
+            v.play().catch(() => {
+              /* optional: handle play failure (e.g. show a play button) */
+            });
+          });
+
+          // 3) Re-bind your modal logic
+          initProjectModal();
+        }
+      });
     }
   }]
 });
 
-// initProjectModal() stays exactly as you already have it.
+// Bootstrap-modal loader (runs on first load and after each transition)
 function initProjectModal() {
   const modalEl  = document.getElementById('projectModal');
   const bodyEl   = document.getElementById('modalBody');
   const rawData  = document.getElementById('projectData');
   const projects = rawData ? JSON.parse(rawData.textContent) : [];
 
+  // Remove old listener if any, to avoid duplicates
   modalEl.removeEventListener('show.bs.modal', modalEl._handler);
 
   function onShow(e) {
@@ -68,4 +87,5 @@ function initProjectModal() {
   modalEl.addEventListener('show.bs.modal', onShow);
 }
 
+// Initialize the modal logic on the very first page load
 document.addEventListener('DOMContentLoaded', initProjectModal);
