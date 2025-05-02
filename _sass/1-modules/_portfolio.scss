@@ -44,33 +44,3 @@
   }
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  overflow: auto; /* allow scroll if needed */
-  padding: 2rem; /* space around content */
-}
-
-.modal-content {
-  max-width: 100%;
-  max-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content img,
-.modal-content video {
-  max-width: 100%;
-  max-height: 90vh; /* fit nicely in screen height */
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease;
-}
-

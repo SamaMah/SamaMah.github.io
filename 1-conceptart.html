@@ -1,0 +1,33 @@
+---
+layout: default
+title: Concept Art
+permalink: /conceptart/
+thumbnail: https://cdnb.artstation.com/p/assets/covers/images/083/857/235/smaller_square/oussama-m-oussama-m-icon-sets.jpg?1736953373
+order: 2
+---
+
+<div class="project-grid">
+  {% for project in site.data.conceptart %}
+    <div class="thumbnail" data-slug="{{ project.slug }}" data-bs-toggle="modal" data-bs-target="#projectModal">
+      <img src="{{ project.thumbnail }}" alt="{{ project.title }}">
+    </div>
+  {% endfor %}
+</div>
+
+<script id="projectData" type="application/json">
+  {{ site.data.conceptart | jsonify }}
+</script>
+
+<!-- Modal -->
+<div class="modal fade fullpage-modal" id="projectModal" tabindex="-1">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content border-0">
+      <button type="button" class="btn-close position-fixed top-0 end-0 m-4 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+</div>
+

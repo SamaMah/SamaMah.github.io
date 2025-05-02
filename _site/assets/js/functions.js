@@ -79,29 +79,39 @@ function toggleProject(block) {
 
 
 //Modal
-function loadModal(index) {
-  const project = window.projectData[index];
-  if (!project) return;
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the modal element and modal body
+  const modal = document.getElementById('projectModal');
+  const modalBody = document.getElementById('modalBody');
 
-  document.getElementById("modalTitle").textContent = project.title;
+  // Parse the JSON data injected into the page
+  const projectData = JSON.parse(document.getElementById('projectData').textContent);
 
-  let html = '';
-  if (project.content_html) {
-    html += `<div class="mb-4">${project.content_html}</div>`;
-  }
+  // When a thumbnail is clicked, load the corresponding content
+  modal.addEventListener('show.bs.modal', function(event) {
+    // Get the clicked thumbnail
+    const button = event.relatedTarget; // The button that triggered the modal
+    const slug = button.getAttribute('data-slug');
 
-  if (project.images && project.images.length) {
-    html += '<div class="row g-4">';
-    project.images.forEach(img => {
-      html += `
-        <div class="col-md-6">
-          <img src="${img.src}" class="img-fluid rounded border" alt="">
-          <p class="text-muted small mt-2">${img.caption || ''}</p>
-        </div>`;
-    });
-    html += '</div>';
-  }
+    // Find the project data based on the slug
+    const project = projectData.find(p => p.slug === slug);
 
-  document.getElementById("modalBody").innerHTML = html;
-}
-
+    // Check if the project exists
+    if (project) {
+      // Update modal title and body with project details
+      modal.querySelector('.modal-title').textContent = project.title;
+      
+      // Clear previous content
+      modalBody.innerHTML = '';
+      
+      // Add project images dynamically
+      project.images.forEach(image => {
+        const img = document.createElement('img');
+        img.src = image;
+        img.alt = project.title;
+        img.classList.add('img-fluid');
+        modalBody.appendChild(img);
+      });
+    }
+  });
+});
