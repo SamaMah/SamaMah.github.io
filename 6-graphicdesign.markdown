@@ -17,8 +17,8 @@ order: 6
     {% assign ext = file.name | split:'.' | last | downcase %}
     <div class="gallery-item">
       {% if video_exts contains ext %}
-        <video class="lazy-video" controls preload="metadata" poster="/assets/img/video-poster.jpg" width="640" height="360">
-          <source data-src="{{ file.path | relative_url }}" type="video/{{ ext }}">
+        <video controls preload="metadata" class="gallery-video">
+          <source src="{{ file.path | relative_url }}" type="video/{{ ext }}">
           Your browser does not support the video tag.
         </video>
       {% else %}
